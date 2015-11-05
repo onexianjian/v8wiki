@@ -1,6 +1,4 @@
-# Becoming a V8 committer
-
-## What is a committer?
+# What is a committer?
 
 Technically, a committer is someone who has write access to the V8 Git repository. A committer can submit his or her own patches or patches from others.
 
@@ -8,7 +6,7 @@ This privilege is granted with some expectation of responsibility: committers ar
 
 A committer is a contributor to the V8 projects' success and a citizen helping the projects succeed. See V8CommittersResponsibility.
 
-## How do I become a committer?
+# How do I become a committer?
 
 In a nutshell, contribute 20 non-trivial patches and get at least three different people to review them (you'll need three people to support you). Then ask someone to nominate you. You're demonstrating your:
 
@@ -31,7 +29,7 @@ Once you get approval from the existing committers, we'll send you instructions 
 
 In the worst case, this can drag out for two weeks. Keep writing patches! Even in the rare cases where a nomination fails, the objection is usually something easy to address like "more patches" or "not enough people are familiar with this person's work."
 
-## Maintaining committer status
+# Maintaining committer status
 
 You don't really need to do much to maintain committer status: just keep being awesome and helping the V8 project!
 
