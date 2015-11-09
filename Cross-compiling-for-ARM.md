@@ -1,4 +1,4 @@
-<font color='darkred'><b><h2>Building V8 with SCons is no longer supported. See <a href='https://code.google.com/p/v8-wiki/wiki/BuildingWithGYP'>BuildingWithGYP</a>.</h2></b></font>
+Building V8 with SCons is no longer supported. See [Building with Gyp](Building with Gyp) for more information on how to build.
 
 ---
 
