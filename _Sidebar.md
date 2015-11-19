@@ -17,3 +17,4 @@
 * Documentation
    * Debugging
       * [Debugging Protocol](Debugging Protocol)
+      * [Stack Trace API](Stack Trace API)
