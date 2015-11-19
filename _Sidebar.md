@@ -26,3 +26,4 @@
       * [Profiling Chromium with v8](Profiling Chromium with v8)
    * Embedding V8
       * [Runtime functions](Runtime functions)
+      * [i18n support](i18n support)
