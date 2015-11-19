@@ -1,5 +1,3 @@
-# Runtime functions
-
 Much of the JavaScript library is implemented in JavaScript code itself,
 using a minimal set of C++ runtime functions callable from JavaScript.
 Some of these are called using names that start with %, and using the flag
