@@ -6,22 +6,6 @@
 ## Git
 See [UsingGit](using_git.md).
 
-## Subversion (deprecated)
-
-Use this command to anonymously check out the up-to-date stable version of the project source code:
-
-> `svn checkout http://v8.googlecode.com/svn/trunk/ v8`
-
-If you plan to contribute to V8 but are not a member, use this command to anonymously check out a read-only version of the development branch:
-
-> `svn checkout http://v8.googlecode.com/svn/branches/bleeding_edge/ v8`
-
-If you're a member of the project, use this command to check out a writable development branch as yourself using HTTPS:
-
-> `svn checkout https://v8.googlecode.com/svn/branches/bleeding_edge/ v8 --username <your username>`
-
-When prompted, enter your generated [googlecode.com](http://code.google.com/hosting/settings) password.
-
 # Source Code Branches
 
 There are several different branches of V8; if you're unsure of which version to get, you most likely want the up-to-date stable version in `trunk/`. Here's an overview of the different branches:
