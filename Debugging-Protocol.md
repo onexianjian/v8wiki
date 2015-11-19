@@ -1,7 +1,8 @@
+** The message based API is no longer maintained. Please ask in v8-users@googlegroups.com if you want to attach a debugger to the run-time.**
+
 # Introduction
 
 V8 has support for debugging the JavaScript code running in it. There are two API's for this a function based API using JavaScript objects and a message based API using a JSON based protocol. The function based API can be used by an in-process debugger agent, whereas the message based API can be used out of process as well.
-**> The message based API is no longer maintained. Please ask in v8-users@googlegroups.com if you want to attach a debugger to the run-time.**
 
 The debugger protocol is based on [JSON](http://www.json.org/)). Each protocol packet is defined in terms of JSON and is transmitted as a string value. All packets have two basic elements `seq` and `type`.
 
