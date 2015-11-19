@@ -21,4 +21,4 @@ V8 public API (basically the files under include/ directory) may change over tim
 
 # GUI and IDE Access
 
-This project's Subversion repository may be accessed using many different client programs and plug-ins. See your client's documentation for more information.
+This project's Git repository may be accessed using many different client programs and plug-ins. See your client's documentation for more information.
