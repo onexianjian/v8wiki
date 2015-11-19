@@ -10,3 +10,4 @@
    * [Testing](Testing)
    * [Release Process](Release Process)
    * [Becoming a committer](Becoming a committer)
+   * [Merging & Patching](Merging & Patching)
