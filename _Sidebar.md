@@ -14,3 +14,6 @@
    * [Cpp Style Guide](Cpp Style Guide)
    * [Becoming a committer](Becoming a committer)
    * [Handling of Ports](Handling of Ports)
+* Documentation
+   * Debugging
+      * [Debugging Protocol](Debugging Protocol)
