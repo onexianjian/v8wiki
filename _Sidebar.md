@@ -2,6 +2,7 @@
 * Usage
    * Building from Source
       * [Checking out source](Checking out source)
+      * [Using Git](Using Git)
       * [Building with Gyp](Building with Gyp)
       * [Cross-compiling for ARM](Cross-compiling for ARM)
    * Using D8
