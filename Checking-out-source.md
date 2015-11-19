@@ -4,7 +4,7 @@
 # Command-Line Access
 
 ## Git
-See [UsingGit](using_git.md).
+See [Using Git](Using Git).
 
 # Source Code Branches
 
