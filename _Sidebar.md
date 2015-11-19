@@ -7,5 +7,6 @@
    * Using D8
       * [D8 on Android](D8 on Android)
 * [Contributing](Contributing)
+   * [Testing](Testing)
    * [Release Process](Release Process)
    * [Becoming a committer](Becoming a committer)
