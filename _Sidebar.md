@@ -8,6 +8,7 @@
    * Using D8
       * [D8 on Android](D8 on Android)
 * [Contributing](Contributing)
+   * [Committer's responsibility](Committer's responsibility)
    * [Testing](Testing)
    * [Release Process](Release Process)
    * [Merging & Patching](Merging & Patching)
