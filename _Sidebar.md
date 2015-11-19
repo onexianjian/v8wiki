@@ -1,6 +1,7 @@
 * [What is V8?](Home)
 * Usage
    * Building from Source
+      * [Checking out source](Checking out source)
       * [Building with Gyp](Building with Gyp)
       * [Cross-compiling for ARM](Cross-compiling for ARM)
 * [Contributing](Contributing)
