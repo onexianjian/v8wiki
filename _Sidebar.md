@@ -12,3 +12,4 @@
    * [Becoming a committer](Becoming a committer)
    * [Merging & Patching](Merging & Patching)
    * [Triaging issues](Triaging issues)
+   * [Cpp Style Guide](Cpp Style Guide)
