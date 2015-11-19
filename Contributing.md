@@ -6,7 +6,7 @@ Before you start working on a larger contribution V8 you should get in touch wit
 
 # Getting the code
 
-See [Using Git](Using Git).
+See [Checking out source](Checking out source).
 
 # Submitting code
 
