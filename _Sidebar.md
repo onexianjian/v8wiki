@@ -20,3 +20,6 @@
       * [Stack Trace API](Stack Trace API)
       * [ARM Debugging](ARM Debugging)
       * [GDB JIT Interface](GDB JIT Interface)
+   * Writing Optimizable JavaScript
+      * [V8 Profiler](V8 Profiler)
+      * [Profiling Chromium with v8](Profiling Chromium with v8)
