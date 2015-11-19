@@ -23,3 +23,5 @@
    * Writing Optimizable JavaScript
       * [V8 Profiler](V8 Profiler)
       * [Profiling Chromium with v8](Profiling Chromium with v8)
+   * Embedding V8
+      * [Runtime functions](Runtime functions)
