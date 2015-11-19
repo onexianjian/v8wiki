@@ -1,6 +1,6 @@
 All internal errors thrown in V8 capture a stack trace when they are created that can be accessed from JavaScript through the error.stack property.  V8 also has various hooks for controlling how stack traces are collected and formatted, and for allowing custom errors to also collect stack traces.  This document outlines V8's JavaScript stack trace API.
 
-### Basic stack traces
+# Basic stack traces
 
 By default, almost all errors thrown by V8 have a `stack` property that holds the topmost 10 stack frames, formatted as a string.  Here's an example of a fully formatted stack trace:
 
@@ -56,7 +56,7 @@ function MyError() {
 
 Passing in MyError as a second argument means that the constructor call to MyError won't show up in the stack trace.
 
-### Customizing stack traces
+# Customizing stack traces
 Unlike Java where the stack trace of an exception is a structured value that allows inspection of the stack state, the stack property in V8 just holds a flat string containing the formatted stack trace.  This is for no other reason than compatibility with other browsers.  However, this is not hardcoded but only the default behavior and can be overridden by user scripts.
 
 For efficiency stack traces are not formatted when they are captured but on demand, the first time the stack property is accessed.  A stack trace is formatted by calling
@@ -87,13 +87,13 @@ The default stack trace is created using the CallSite API so any information tha
 
 To maintain restrictions imposed on strict mode functions, frames that have a strict mode function and all frames below (its caller etc.) are not allow to access their receiver and function objects. For those frames, `getFunction()` and `getThis()` will return `undefined`.
 
-### Compatibility
+# Compatibility
 The API described here is specific to V8 and is not supported by any other JavaScript implementations.  Most implementations do provide an `error.stack` property but the format of the stack trace is likely to be different from the format described here.  The recommended use of this API is
 
   * Only rely on the layout of the formatted stack trace if you know your code is running in v8.
   * It is safe to set `Error.stackTraceLimit` and `Error.prepareStackTrace` regardless of which implementation is running your code but be aware that it will only have an effect if your code is running in V8.
 
-### Appendix: Stack trace format
+# Appendix: Stack trace format
 The default stack trace format used by V8 can for each stack frame give the following information:
 
   * Whether the call is a construct call.
