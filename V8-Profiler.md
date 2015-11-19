@@ -3,7 +3,7 @@
 V8 has built-in sample based profiling. Profiling is turned off by default, but can be enabled via the --prof command line option. The sampler records stacks of both JavaScript and C/C++ code.
 
 # Build
-Build the d8 shell following the instructions at [BuildingWithGYP](BuildingWithGYP.md).
+Build the d8 shell following the instructions at [Building with GYP](Building with GYP).
 
 
 # Command Line
