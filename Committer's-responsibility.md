@@ -1,6 +1,4 @@
-# V8 committer's responsibility
-
-## Basic commit guidelines
+# Basic commit guidelines
 
 When you're committing to the V8 repositories, ensure that you follow those guidelines:
 
@@ -13,7 +11,7 @@ In short, do the right thing for the project, not the easiest thing to get code 
 
 **Don't be afraid to ask questions. There is always someone who will immediately read messages sent to the v8-committers mailing list who can help you.**
 
-## Changes with multiple reviewers
+# Changes with multiple reviewers
 
 There are occasionally changes with a lot of reviewers on them, since sometimes several people might need to be in the loop for a change because of multiple areas of responsibility and expertise.
 
