@@ -7,6 +7,16 @@ For the examples, a branched 2.4 version of V8 will be used. Substitute "2.4" wi
 **An associated issue on Chromium's or V8's issue tracker is mandatory if a patch is merged. This helps with keeping track of merges.
 You can use [a template](https://code.google.com/p/v8/issues/entry?template=Merge%20request) to create an issue.**
 
+# What qualifies a merge candidate?
+
+* The patch fixes a *severe* bug (order of importance)
+   1. Security bug
+   1. Stability bug
+   1. Correctness bug
+   1. Performance bug
+* The patch does not alter APIs
+* The patch does not change behavior present before branch cut (except the behavior change fixes a bug)
+
 # Merge process outlined
 
 The merge process in the Chromium and V8 tracker is driven by labels in the form of
