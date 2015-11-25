@@ -81,7 +81,7 @@ When you have created a context you can enter and exit it any number of times. W
 
 ![](images/intro_contexts.png)
 
-Note that the built-in utility functions and objects of each context are kept separate. You can optionally set a security token when you create a context. See the [Security Model](Security Model) section for more information.
+Note that the built-in utility functions and objects of each context are kept separate. You can optionally set a security token when you create a context. See the [Security Model](#security-model) section for more information.
 
 The motivation for using contexts in V8 was so that each window and iframe in a browser can have its own fresh JavaScript environment.
 
@@ -126,7 +126,7 @@ The complexity of an accessor depends upon the type of data you are manipulating
 - [Accessing Static Global Variables](#accessing-static-global-variables)
 - [Accessing Dynamic Variables](#accessing-dynamic-variables)
 
-# Accessing Static Global Variables
+## Accessing Static Global Variables
 
 Let's say there are two C++ integer variables, `x` and `y` that are to be made available to JavaScript as global variables within a context. To do this, you need to call C++ accessor functions whenever a script reads or writes those variables. These accessor functions convert a C++ integer to a JavaScript integer using `Integer::New`, and convert a JavaScript integer to a C++ integer using `Int32Value`. An example is provided below:
 
@@ -151,7 +151,7 @@ Persistent<Context> context = Context::New(isolate, NULL, global_templ);
 
 Note that the object template in the code above is created at the same time as the context. The template could have been created in advance and then used for any number of contexts.
 
-# Accessing Dynamic Variables
+## Accessing Dynamic Variables
 
 In the preceding example the variables were static and global. What if the data being manipulated is dynamic, as is true of the DOM tree in a browser? Let's imagine `x` and `y` are object fields on the C++ class `Point`:
 
