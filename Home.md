@@ -3,8 +3,6 @@
 
 V8 is Google's open source high-performance JavaScript engine, written in C++ and used in Google Chrome, the open source browser from Google. It implements ECMAScript as specified in ECMA-262, and runs on Windows XP or later, Mac OS X 10.5+, and Linux systems that use IA-32, ARM or MIPS processors. V8 can run standalone, or can be embedded into any C++ application.
 
-V8 can run standalone, or can be embedded into any C++ application.
-
 Additionally to this wiki you can find more information here:
 
  * The *V8 documentation* https://developers.google.com/v8/intro page which includes instructions on https://developers.google.com/v8/build downloading and building V8.
