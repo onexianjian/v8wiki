@@ -1,4 +1,5 @@
 * [What is V8?](Home)
+* [Introduction](Introduction)
 * Usage
    * Building from Source
       * [Checking out source](Checking out source)
@@ -11,6 +12,7 @@
    * [Committer's responsibility](Committer's responsibility)
    * [Testing](Testing)
    * [Release Process](Release Process)
+   * [Launch Philosophy](Launch Process)
    * [Merging & Patching](Merging & Patching)
    * [Triaging issues](Triaging issues)
    * [Cpp Style Guide](Cpp Style Guide)
@@ -24,7 +26,14 @@
       * [GDB JIT Interface](GDB JIT Interface)
    * Writing Optimizable JavaScript
       * [V8 Profiler](V8 Profiler)
+      * [Using V8's Internal Profiler](Using V8’s internal profiler)
       * [Profiling Chromium with v8](Profiling Chromium with v8)
    * Embedding V8
+      * [Getting Started](Getting Started)
+      * [Embedder's Guide](Embedder's Guide)
       * [Runtime functions](Runtime functions)
       * [i18n support](i18n support)
+   * Experiments
+      * [Strong Mode & SoundScript](Experiments with Strengthening JavaScript)
+   * Under the Hood
+      * [Design Elements](Design Elements)
