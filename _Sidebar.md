@@ -29,7 +29,7 @@
       * [Using V8's Internal Profiler](Using V8’s internal profiler)
       * [Profiling Chromium with v8](Profiling Chromium with v8)
    * Embedding V8
-      * [Getting Started](Getting Started)
+      * [Getting Started](Getting Started with Embedding)
       * [Embedder's Guide](Embedder's Guide)
       * [Runtime functions](Runtime functions)
       * [i18n support](i18n support)
