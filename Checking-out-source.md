@@ -8,11 +8,9 @@ See [Using Git](Using Git).
 
 # Source Code Branches
 
-There are several different branches of V8; if you're unsure of which version to get, you most likely want the up-to-date stable version in `trunk/`. Here's an overview of the different branches:
+There are several different branches of V8; if you're unsure of which version to get, you most likely want the up-to-date stable version. Have a look at our [Release Process](Release Process) for more information about the different branches used.
 
-  * The bleeding edge, `branches/bleeding_edge/`, is where active development takes place. If you're considering contributing to V8 this is the branch to get.
-  * Under `trunk/` is the "stable edge", which is updated a few times per week. It is a copy of the bleeding edge that has been successfully tested. Use this if you want to be almost up to date and don't want your code to break whenever we accidentally forget to add a file on the bleeding edge. Some of the trunk revisions are tagged with X.Y.Z.T version labels. When we decide which of X.Y.**.** is the "most stable", it becomes the X.Y branch in subversion.
-  * If you want a well-tested version that doesn't change except for bugfixes, use one of the versioned branches (e.g. `branches/3.16/` at the time of this writing). Note that usually only the last two branches are actively maintained; any older branches could have unfixed security holes. You may want to follow the V8 version that Chrome is shipping on its stable (or beta) channels, see http://omahaproxy.appspot.com.
+You may want to follow the V8 version that Chrome is shipping on its stable (or beta) channels, see http://omahaproxy.appspot.com.
 
 # V8 public API compatibility
 
