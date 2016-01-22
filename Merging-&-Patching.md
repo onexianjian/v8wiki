@@ -2,7 +2,7 @@
 
 If you have a patch to the master branch (e.g. an important bug fix) that needs to be merged into one of the production V8 branches, read on.
 
-For the examples, a branched 2.4 version of V8 will be used. Substitute "2.4" with your version number.
+For the examples, a branched 2.4 version of V8 will be used. Substitute "2.4" with your version number. See [Release Process](Release Process) for more information about version numbers.
 
 **An associated issue on Chromium's or V8's issue tracker is mandatory if a patch is merged. This helps with keeping track of merges.
 You can use [a template](https://code.google.com/p/v8/issues/entry?template=Merge%20request) to create an issue.**
