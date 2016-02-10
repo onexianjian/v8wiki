@@ -27,8 +27,8 @@ Merge-[Status]-[Branch]
 ```
 The currently important labels for V8 are:
 
-  1. Merge-Request-$BRANCHNUMBER$ initiates the process => This fix should be merged into M-##
-  1. Merge-Review-$BRANCHNUMBER$ The merge is not approved yet for M-## e.g. because Canary coverage is missing
+  1. Merge-Request-$BRANCHNUMBER$ initiates the process => This fix should be merged into #.#
+  1. Merge-Review-$BRANCHNUMBER$ The merge is not approved yet for #.# e.g. because Canary coverage is missing
   1. Merge-Approved-$BRANCHNUMBER$ => Simply means that the Chrome TPM are signing the merge off
   1. Merge-Merged-$BRANCHNUMBER$ => When the merge is done the Merge-Approved label is swapped with this one. $BRANCHNUMBER$ is the name/number of the V8 branch e.g. 4.3 for M-43.
 
