@@ -9,6 +9,7 @@
    * Using D8
       * [D8 on Android](D8 on Android)
 * [Contributing](Contributing)
+   * [Code of conduct](Code of conduct)
    * [Committer's responsibility](Committer's responsibility)
    * [Testing](Testing)
    * [Release Process](Release Process)
