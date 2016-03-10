@@ -31,6 +31,7 @@
       * [Profiling Chromium with v8](Profiling Chromium with v8)
    * Embedding V8
       * [Getting Started](Getting Started with Embedding)
+      * [Example code](Example code)
       * [Embedder's Guide](Embedder's Guide)
       * [Runtime functions](Runtime functions)
       * [i18n support](i18n support)
