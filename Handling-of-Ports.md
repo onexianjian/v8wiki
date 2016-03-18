@@ -16,6 +16,9 @@ This article describes how ports should be handled.
 # x87 (not officially supported)
   1. Contact/CC the x87 team in the CL if needed. Use the mailing list v8-x87-ports.at.googlegroups.com for that purpose.
 
+# s390 (not officially supported)
+  1. Contact/CC the s390 team in the CL if needed. Use the mailing list v8-s390-ports.at.googlegroups.com for that purpose.
+
 # ARM
 ## Straight-forward ARM ports
   1. Do them yourself.
