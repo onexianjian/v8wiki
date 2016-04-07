@@ -1,0 +1,1 @@
+V8 will feature an interpreter called Ignition. You can checkout its [design document](https://docs.google.com/document/d/11T2CRex9hXxoJwbYqVQ32yIPMh0uouUZLdyrtmMoL44/edit?ts=56f27d9d#heading=h.6jz9dj3bnr8t) to learn how it works.
