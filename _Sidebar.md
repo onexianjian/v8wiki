@@ -39,3 +39,4 @@
       * [Strong Mode & SoundScript](Experiments with Strengthening JavaScript)
    * Under the Hood
       * [Design Elements](Design Elements)
+      * [Interpreter](Interpreter)
