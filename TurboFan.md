@@ -1,1 +1,1 @@
-TurboFan is one of V8's optimizing compilers leveraging concept called "[Sea of Nodes](http://darksi.de/d.sea-of-nodes/)". One of V8's blog posts offers a [high level overview](http://v8project.blogspot.de/2015/07/digging-into-turbofan-jit.html) of TurboFan.
+TurboFan is one of V8's optimizing compilers leveraging a concept called "[Sea of Nodes](http://darksi.de/d.sea-of-nodes/)". One of V8's blog posts offers a [high level overview](http://v8project.blogspot.de/2015/07/digging-into-turbofan-jit.html) of TurboFan.
