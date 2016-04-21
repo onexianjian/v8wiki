@@ -3,6 +3,7 @@
   * v8 r12178 (on Google Code) or later
   * an Android emulator or device with matching USB cable
   * make sure [building with GYP](http://code.google.com/p/v8-wiki/wiki/BuildingWithGYP) works
+  * [Mac-only] [Download the NDK](http://developer.android.com/ndk/downloads/index.html) and note the path where it is installed. 
 
 
 # Get the code
@@ -13,7 +14,10 @@
 v8$ echo "target_os = ['android']" >> ../.gclient && gclient sync --nohooks
 ```
   * The sync will take a while the first time as it downloads the Android NDK to v8/third\_party
-  * If you want to use a different NDK, you need to set the gyp variable android\_ndk\_root
+  * If you want to use a different NDK, or you are building on Mac where you *must* supply your own NDK, you need to pass the path to your NDK installation when issuing running make.
+```
+    make android_arm.release -j16 android_ndk_root=[full path to ndk]
+```
 
 
 # Get the Android SDK
@@ -83,6 +87,15 @@ adb pull /data/local/tmp/v8/v8.log ./
 cp out/ia32.release/d8 ./d8  # only required once
 tools/linux-tick-processor --nm=$ANDROID_NDK_ROOT/toolchain/bin/arm-linux-androideabi-nm
 ```
+
+
+# Using the Static Libraries
+
+The static libraries created by the build process are found in `out/android_arm.release/obj.target/tools/gyp/`. They are "thin" archives, which means that the .a files contain symbolic links to the .o files used to make the archive. This makes these libraries unusable on any machine but the one that built the library. 
+
+A program linking with V8 must link with `libv8_libplatform.a` `libv8_base.a` `libv8_libbase.a` and one of the snapshot libaries such as`libv8_nosnapshot.a` that will be produced if V8 is compiled with the `snapshot=off` option.
+
+Unless V8 was compiled with `i18nsupport=off` option the program must also link with the International Components for Unicode (ICU) library found in `out/android_arm.release/obj.target/third_party/icu/`.
 
 # Compile SpiderMonkey for Lollipop
 ```
