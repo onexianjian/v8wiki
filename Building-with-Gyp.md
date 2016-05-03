@@ -90,7 +90,7 @@ LD_LIBRARY_PATH=out/ia32.release/lib.target out/ia32.release/d8
 To build d8:
 ```
 export GYP_GENERATORS=ninja
-build/gyp_v8
+gypfiles/gyp_v8
 ninja -C out/Debug d8
 ```
 
@@ -101,11 +101,11 @@ If you want to build all targets, use `ninja -C out/Debug all`. It's faster to b
 Note: You need to set `v8_target_arch` if you want a non-native build, i.e. either
 ```
 export GYP_DEFINES="v8_target_arch=arm"
-build/gyp_v8 ...
+gypfiles/gyp_v8 ...
 ```
 or
 ```
-build/gyp_v8 -Dv8_target_arch=arm ...
+gypfiles/gyp_v8 -Dv8_target_arch=arm ...
 ```
 
 
@@ -113,7 +113,7 @@ build/gyp_v8 -Dv8_target_arch=arm ...
 
 To use goma you need to set the `use_goma` gyp define, either by passing it to `gyp_v8`, i.e.
 ```
-build/gyp_v8 -Duse_goma=1
+gypfiles/gyp_v8 -Duse_goma=1
 ```
 or by setting the environment variable `$GYP_DEFINES` appropriately:
 ```
@@ -141,14 +141,14 @@ make arm.release
 
 From the root of your V8 checkout, run either of:
 ```
-build/gyp_v8 -Dtarget_arch=ia32
-build/gyp_v8 -Dtarget_arch=x64
+gypfiles/gyp_v8 -Dtarget_arch=ia32
+gypfiles/gyp_v8 -Dtarget_arch=x64
 ```
 
-This will generate Xcode project files in `build/` that you can then either open with Xcode or compile directly from the command line:
+This will generate Xcode project files in `gypfiles/` that you can then either open with Xcode or compile directly from the command line:
 ```
-xcodebuild -project build/all.xcodeproj -configuration Release
-xcodebuild -project build/all.xcodeproj
+xcodebuild -project gypfiles/all.xcodeproj -configuration Release
+xcodebuild -project gypfiles/all.xcodeproj
 ```
 
 Note: If you have configured your `GYP_GENERATORS` environment variable, either unset it, or set it to `xcode` for this to work.
@@ -202,12 +202,12 @@ third_party/python_26/python.exe build\gyp_v8 -Dtarget_arch=x64
   * If you use cygwin, the workflow is the same, but the syntax is slightly different:
     1. Generate project files:
 ```
-build/gyp_v8
+gypfiles/gyp_v8
 ```
 > > > This will spit out a bunch of warnings about missing input files, but it seems to be OK to ignore them. (If you have time to figure this out, we'd happily accept a patch that makes the warnings go away!)
     1. Build:
 ```
-/cygdrive/c/Program\ Files\ (x86)/Microsoft\ Visual\ Studio\ 9.0/Common7/IDE/devenv.com /build Release build/all.sln
+/cygdrive/c/Program\ Files\ (x86)/Microsoft\ Visual\ Studio\ 9.0/Common7/IDE/devenv.com /build Release gypfiles/all.sln
 ```
 
 
