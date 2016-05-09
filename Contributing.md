@@ -14,7 +14,7 @@ The source code of V8 follows the [Google C++ Style Guide](http://google-stylegu
 
 > `tools/presubmit.py`
 
-The presubmit script uses a linter from Google, `cpplint.py`.  External contributors can get this from [here](http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py)  and place it in their path.
+The presubmit script uses a linter from Google, `cpplint.py`.  External contributors can get this from [here](https://raw.githubusercontent.com/google/styleguide/gh-pages/cpplint/cpplint.py)  and place it in their path.
 
 All submissions, including submissions by project members, require review.  We use the same code-review tools and process as the chromium project.  In order to submit a patch, you need to get the [depot\_tools](http://dev.chromium.org/developers/how-tos/install-depot-tools) and follow these instructions on [requesting a review](http://dev.chromium.org/developers/contributing-code) (using your V8 workspace instead of a chromium workspace).
 
