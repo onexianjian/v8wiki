@@ -7,6 +7,7 @@ Please move issues to the V8 specialty sheriffs queue of one of the
 following categories:
 
   * Stability: `status=available component:Blink>JavaScript label:Stability -label:Clusterfuzz`
+    * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=status%3Davailable+component%3ABlink%3EJavaScript+label%3AStability+-label%3AClusterfuzz) query
   * Performance: hablich@c....org, mvstaton@c....org
   * Clusterfuzz: Set the bug to the following state:
     * `label:ClusterFuzz component:Blink>JavaScript status:Available -has:owner`
