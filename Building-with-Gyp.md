@@ -183,6 +183,7 @@ If you have Visual Studio 2013 and 2015 installed side-by-side and set the envir
   * If you use the command prompt:
     1. Generate project files:
 ```
+set GYP_GENERATORS=ninja
 python build\gyp_v8
 ```
 > > > Specify the path to `python.exe` if you don't have it in your PATH.
