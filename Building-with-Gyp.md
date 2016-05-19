@@ -203,6 +203,7 @@ third_party/python_26/python.exe build\gyp_v8 -Dtarget_arch=x64
   * If you use cygwin, the workflow is the same, but the syntax is slightly different:
     1. Generate project files:
 ```
+export GYP_GENERATORS=ninja
 gypfiles/gyp_v8
 ```
 > > > This will spit out a bunch of warnings about missing input files, but it seems to be OK to ignore them. (If you have time to figure this out, we'd happily accept a patch that makes the warnings go away!)
