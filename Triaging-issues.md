@@ -12,7 +12,7 @@ following categories:
   * Clusterfuzz: Set the bug to the following state:
     * `label:ClusterFuzz component:Blink>JavaScript status:Available -has:owner`
     * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=label%3AClusterFuzz+component%3ABlink%3EJavaScript+status%3AAvailable+-has%3Aowner) query.
-    * CC mstarzinger@c....org and ishell@c....org
+    * CC mstarzinger@c....org, ishell@c....org, rossberg@c....org
 
 Please CC hablich@c....org on all issues.
 
