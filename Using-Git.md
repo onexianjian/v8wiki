@@ -15,7 +15,7 @@ apt-get install git
   1. **depot\_tools**. See [instructions](http://dev.chromium.org/developers/how-tos/install-depot-tools).
   1. For **push access**, you need to setup a .netrc file with your git password:
     1. Go to https://chromium.googlesource.com/new-password - login with your committer account (e.g. @chromium.org account, non-chromium.org ones work too). Note: creating a new password doesn't automatically revoke any previously created passwords.
-    1. Follow the instructions in the "Staying Authenticated" section. It would ask you to copy-paste two lines into your ~/.netrc file.
+    1. Have a look at the big, grey box containing shell commands. Paste those lines into your shell.
     1. In the end, ~/.netrc should have two lines that look like:
 ```
 machine chromium.googlesource.com login git-yourusername.chromium.org password <generated pwd>
