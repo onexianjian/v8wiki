@@ -16,13 +16,6 @@ apt-get install git
   1. For **push access**, you need to setup a .netrc file with your git password:
     1. Go to https://chromium.googlesource.com/new-password - login with your committer account (e.g. @chromium.org account, non-chromium.org ones work too). Note: creating a new password doesn't automatically revoke any previously created passwords.
     1. Have a look at the big, grey box containing shell commands. Paste those lines into your shell.
-    1. In the end, ~/.netrc should have two lines that look like:
-```
-machine chromium.googlesource.com login git-yourusername.chromium.org password <generated pwd>
-machine chromium-review.googlesource.com login git-yourusername.chromium.org password <generated pwd>
-```
-    1. Make sure that ~/.netrc file's permissions are 0600 as many programs refuse to read .netrc files which are readable by anyone other than you.
-
 
 ## How to start
 
