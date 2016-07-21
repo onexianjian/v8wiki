@@ -70,7 +70,7 @@ Version 2.4.9.10: Issue xxx: The parser doesn't parse.
 
 ## Step 3: Observe the [branch waterfall] (https://build.chromium.org/p/client.v8.branches/console)
 
-If one of the builders is not green after handling your patch, revert the merge immediately. A bot (AutoTagBot) will take care of the correct versioning after a 15 minutes wait time.
+If one of the builders is not green after handling your patch, revert the merge immediately. A bot (AutoTagBot) will take care of the correct versioning after a 10 minutes wait time.
 
 # FAQ
 
