@@ -1,7 +1,7 @@
 **Build issues? File a bug at code.google.com/p/v8/issues or ask for help on v8-users@googlegroups.com.**
 
 ***
-**GYP is going to be deprecated in favor of [GN](building_with_gn.md) in the future**
+**GYP is going to be deprecated in favor of [GN](Building with GN) in the future**
 ***
 # Building V8
 
