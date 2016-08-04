@@ -9,48 +9,46 @@ If you intend to develop on V8, i.e., send patches and work with changelists, yo
 
 More information on GN can be found in [Chromium's documentation](https://www.chromium.org/developers/gn-build-configuration) or [GN's own](https://chromium.googlesource.com/chromium/src/+/master/tools/gn/docs).
 
-## Prerequisite: Installing GN
+## Prerequisite: Build dependencies
 
-First, you need GYP itself. GYP is fetched together with the other dependencies by running:
+All build dependencies are fetched by running:
 
 ```gclient sync```
 
+GN itself is distributed with [depot_tools](https://www.chromium.org/developers/how-tos/install-depot-tools).
+
 ## Building
 
-### GCC + make
+There are two workflows for building v8. A raw workflow using commands on a lower level and a convenience workflow using wrapper scripts.
 
-Requires GNU make 3.81 or later. Should work with any GCC >= 4.8 or any recent clang (3.5 highly recommended).
+#### Build instructions (convenience workflow) 
 
-#### Build instructions
-
-First, generate the necessary build files by running the following command in your V8 checkout.
-
-```gn gen out/Default```
-
-You can replace ```Default``` with the configuration of your choice e.g. ```Release``` or ```Debug```
-
-For building V8 only as a library do:
-
-```ninja -C out/Default v8```
-
-If you want to build V8 with it's shell called D8 the command is
-
-```ninja -C out/Default d8```
-
-#### Transformation from GYP to GN
-
-In order to make the transformation from GYP to GN more easy and provide an easy way to replicate builder configuration there is a tool called ```v8gen.py``` e.g. 
+Use a convenience script to generate your build files, e.g.:
 
 ```tools/dev/v8gen.py x64.release```
 
-will build with the same configuration as with GYP.
+Call ```v8gen.py --help``` for more information. You can add an alias ```v8gen``` calling the script and also use it in other checkouts. For compilation, please follow the raw workflow below.
 
-#### Setting target architecture
+#### Build instructions (raw workflow) 
 
-Some target architectures are not yet supported out of the box by GN. If this is the case you can manually set the target architecture by modifying the GN args e.g.
+First, generate the necessary build files:
 
-```gn args out/Default```
+```gn args out.gn/foo```
 
-In the editor window you can add the argument ```v8_target_cpu``` e.g.
+An editor will open for specifying the gn arguments. You can replace ```foo``` with an arbitrary directory name.  Note that due to the conversion from git to gn, we use a separate ```out.gn``` folder, to not collide with old gyp folders. If you don't use gyp or keep your subfolders separate, you can also use ```out```.
 
-``` v8_target_cpu="arm64" ```
+You can also pass args on the command line:
+
+```gn gen out.gn/foo --args='is_debug=false target_cpu="x64" v8_target_cpu="arm64" use_goma=true'```
+
+This will generate build files for compiling V8 with the arm64 simulator in release mode using goma for compilation. For an overview of all available gn arguments run:
+
+```gn args out.gn/foo --list```
+
+For building all of V8 run:
+
+```ninja -C out.gn/foo```
+
+To build specific targets like d8, pass them on the command line:
+
+```ninja -C out.gn/foo d8```
