@@ -53,4 +53,4 @@ Some target architectures are not yet supported out of the box by GN. If this is
 
 In the editor window you can add the argument ```v8_target_cpu``` e.g.
 
-```v8_target_cpu="arm64"```
+``` v8_target_cpu="arm64" ```
