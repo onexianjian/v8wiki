@@ -5,6 +5,7 @@
       * [Checking out source](Checking out source)
       * [Using Git](Using Git)
       * [Building with Gyp](Building with Gyp)
+      * [Building with GN](Building with GN)
       * [Cross-compiling for ARM](Cross-compiling for ARM)
    * Using D8
       * [D8 on Android](D8 on Android)
