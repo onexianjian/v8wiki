@@ -45,4 +45,10 @@ If you want to build V8 with it's shell called D8 the command is
 ninja -C out/Default d8
 ```
 
-More information
+#### Transformation from GYP to GN
+
+In order to make the transformation from GYP to GN more easy and provide an easy way to replicate builder configuration there is a tool called ```v8gen.py``` e.g. 
+
+```tools/dev/v8gen.py x64.release```
+
+will build with the same configuration as with GYP.
