@@ -1,5 +1,8 @@
 **Build issues? File a bug at code.google.com/p/v8/issues or ask for help on v8-users@googlegroups.com.**
 
+***
+**GYP is going to be deprecated in favor of [GN](building_with_gn.md) in the future**
+***
 # Building V8
 
 V8 is built with the help of [GYP](http://code.google.com/p/gyp/). GYP is a meta build system of sorts, as it generates build files for a number of other build systems. How you build therefore depends on what "back-end" build system and compiler you're using.
