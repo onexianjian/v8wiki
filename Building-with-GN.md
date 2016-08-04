@@ -43,7 +43,7 @@ First, generate the necessary build files:
 
 ```gn args out.gn/foo```
 
-An editor will open for specifying the gn arguments. You can replace ```foo``` with an arbitrary directory name.  Note that due to the conversion from git to gn, we use a separate ```out.gn``` folder, to not collide with old gyp folders. If you don't use gyp or keep your subfolders separate, you can also use ```out```.
+An editor will open for specifying the gn arguments. You can replace ```foo``` with an arbitrary directory name.  Note that due to the conversion from gyp to gn, we use a separate ```out.gn``` folder, to not collide with old gyp folders. If you don't use gyp or keep your subfolders separate, you can also use ```out```.
 
 You can also pass the arguments on the command line:
 
