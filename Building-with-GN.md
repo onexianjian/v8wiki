@@ -13,9 +13,7 @@ More information on GN can be found in [Chromium's documentation](https://www.ch
 
 First, you need GYP itself. GYP is fetched together with the other dependencies by running:
 
-```
-gclient sync
-```
+```gclient sync```
 
 ## Building
 
@@ -27,23 +25,17 @@ Requires GNU make 3.81 or later. Should work with any GCC >= 4.8 or any recent c
 
 First, generate the necessary build files by running the following command in your V8 checkout.
 
-```
-gn gen out/Default
-```
+```gn gen out/Default```
 
 You can replace ```Default``` with the configuration of your choice e.g. ```Release``` or ```Debug```
 
 For building V8 only as a library do:
 
-```
-ninja -C out/Default v8
-```
+```ninja -C out/Default v8```
 
 If you want to build V8 with it's shell called D8 the command is
 
-```
-ninja -C out/Default d8
-```
+```ninja -C out/Default d8```
 
 #### Transformation from GYP to GN
 
@@ -52,3 +44,13 @@ In order to make the transformation from GYP to GN more easy and provide an easy
 ```tools/dev/v8gen.py x64.release```
 
 will build with the same configuration as with GYP.
+
+#### Setting target architecture
+
+Some target architectures are not yet supported out of the box by GN. If this is the case you can manually set the target architecture by modifying the GN args e.g.
+
+```gn args out/Default```
+
+In the editor window you can add the argument ```v8_target_cpu``` e.g.
+
+```v8_target_cpu="arm64"```
