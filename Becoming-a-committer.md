@@ -29,6 +29,10 @@ Once you get approval from the existing committers, we'll send you instructions 
 
 In the worst case, this can drag out for two weeks. Keep writing patches! Even in the rare cases where a nomination fails, the objection is usually something easy to address like "more patches" or "not enough people are familiar with this person's work."
 
+## Setting up push access to the repository
+
+When you are accepted as a committer make sure to [set up push access to the repo](https://github.com/v8/v8/wiki/Using%20Git#prerequisites).
+
 # Maintaining committer status
 
 You don't really need to do much to maintain committer status: just keep being awesome and helping the V8 project!
