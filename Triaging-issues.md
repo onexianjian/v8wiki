@@ -11,8 +11,8 @@ following categories:
     * No CC needed, will be triaged by a sheriff automatically
   * Performance: hablich@c....org, mvstaton@c....org
   * Clusterfuzz: Set the bug to the following state:
-    * `label:ClusterFuzz component:Blink>JavaScript status:Available -has:owner`
-    * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=label%3AClusterFuzz+component%3ABlink%3EJavaScript+status%3AAvailable+-has%3Aowner) query.
+    * `label:ClusterFuzz component:Blink>JavaScript status:Untriaged`
+    * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=label%3AClusterFuzz+component%3ABlink%3EJavaScript+status%3AUntriaged&colspec=ID+Pri+M+Stars+ReleaseBlock+Component+Status+Owner+Summary+OS+Modified&x=m&y=releaseblock&cells=ids) query.
     * No CC needed, will be triaged by a sheriff automatically
 
 Assign remaining issues to hablich@c....org.
