@@ -187,13 +187,13 @@ If you have Visual Studio 2013 and 2015 installed side-by-side and set the envir
     1. Generate project files:
 ```
 set GYP_GENERATORS=ninja
-python build\gyp_v8
+python gypfiles\gyp_v8
 ```
 > > > Specify the path to `python.exe` if you don't have it in your PATH.
 > > > Append `-Dtarget_arch=x64` if you want to build 64bit binaries. If you switch between ia32 and x64 targets, you may have to manually delete the generated .vcproj/.sln files before regenerating them.
 > > > Example:
 ```
-third_party/python_26/python.exe build\gyp_v8 -Dtarget_arch=x64
+third_party/python_26/python.exe gypfiles\gyp_v8 -Dtarget_arch=x64
 ```
     1. Build:
 > > > Either open `build\All.sln` in Visual Studio, or compile on the command line as follows (adapt the path as necessary, or simply put `devenv.com` in your PATH):
