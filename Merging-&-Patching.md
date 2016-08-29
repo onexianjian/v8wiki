@@ -34,13 +34,15 @@ The currently important labels for V8 are:
 
 # Instructions for git using the automated script
 
-## How to check if a commit was already merged/reverted
+## How to check if a commit was already merged/reverted/has Canary coverage
 
 Use mergeinfo.py to get all the commits which are connected to the HASH according to Git.
 
 ```
 tools/release/mergeinfo.py HASH
 ```
+
+If it tells you ```Is on Canary: No Canary coverage``` you should not merge yet because the fix was not yet deployed on a Canary build. A good rule of the thump is to wait at least 3 days after the fix landed until the merge is conducted.
 
 ## Step 1: Run the script
 
@@ -78,6 +80,7 @@ If one of the builders is not green after handling your patch, revert the merge 
 When two people are merging at the same time a race-condition can happen in the merge scripts. If this is the case, contact machenbach@chromium.org and hablich@chromium.org.
 ## Is there a TL;DR;?
   1. [Create issue on issue tracker](https://code.google.com/p/v8/issues/entry?template=Merge%20request)
+  1. Check status of the fix with ```tools/release/mergeinfo.py```
   1. Add Merge-Request-{Branch} to the issue
   1. Wait until somebody will add Merge-Approved-{Branch}
   1. Merge
