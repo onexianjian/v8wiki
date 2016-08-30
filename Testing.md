@@ -2,7 +2,7 @@ V8 includes a test framework that allows you to test the engine. The framework l
 
 ## Running the V8 tests
 
-Before you run the tests, you will have to build V8 with GYP using the instructions [here](http://code.google.com/p/v8-wiki/wiki/BuildingWithGYP)
+Before you run the tests, you will have to build V8 with GYP using the instructions [here](http://code.google.com/p/v8-wiki/wiki/BuildingWithGYP) or with GN using the instructions [here](https://github.com/v8/v8/wiki/Building%20with%20GN) - see below.
 
 You can append `.check` to any build target to have tests run for it, e.g.
 ```
@@ -15,6 +15,16 @@ make check # builds and tests everything (no dot before "check"!)
 Before submitting patches, you should always run the quickcheck target, which builds a fast debug build and runs only the most relevant tests:
 ```
 make quickcheck
+```
+
+If you built V8 using GN, you can run tests like this:
+```
+tools/run-tests.py --gn
+```
+
+or if you want have multiple GN configurations and don't want to run the tests on the last compiled configuration:
+```
+tools/run-tests.py --outdir=out.gn/ia32.release
 ```
 
 You can also run tests manually:
