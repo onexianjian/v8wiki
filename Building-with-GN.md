@@ -29,14 +29,6 @@ Use a convenience script to generate your build files, e.g.:
 
 Call ```v8gen.py --help``` for more information. You can add an alias ```v8gen``` calling the script and also use it in other checkouts.
 
-For building all of V8 run:
-
-```ninja -C out.gn/x64.release```
-
-To build specific targets like d8, add them to the command line:
-
-```ninja -C out.gn/x64.release d8```
-
 #### Build instructions (raw workflow) 
 
 First, generate the necessary build files:
@@ -52,6 +44,16 @@ You can also pass the arguments on the command line:
 This will generate build files for compiling V8 with the arm64 simulator in release mode using goma for compilation. For an overview of all available gn arguments run:
 
 ```gn args out.gn/foo --list```
+
+## Compilation
+
+For building all of V8 run:
+
+```ninja -C out.gn/x64.release```
+
+To build specific targets like d8, add them to the command line:
+
+```ninja -C out.gn/x64.release d8```
 
 ## Testing
 
