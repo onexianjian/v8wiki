@@ -47,7 +47,7 @@ This will generate build files for compiling V8 with the arm64 simulator in rele
 
 ## Compilation
 
-For building all of V8 run:
+For building all of V8 run (assuming gn generated to the ```x64.release``` folder):
 
 ```ninja -C out.gn/x64.release```
 
