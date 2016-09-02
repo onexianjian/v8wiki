@@ -59,5 +59,6 @@ You can pass the output directory to the test driver. Other relevant flags will 
 
 ```tools/run-tests.py --outdir out.gn/foo```
 
-You can also test your most recently compiled build (in ```out.gn```
+You can also test your most recently compiled build (in ```out.gn```):
+
 ```tools/run-tests.py --gn```
