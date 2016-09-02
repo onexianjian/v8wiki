@@ -32,6 +32,7 @@ Call ```v8gen.py --help``` for more information. You can add an alias ```v8gen``
 List available configurations (or bots from a master):
 
 ```tools/dev/v8gen.py list```
+
 ```tools/dev/v8gen.py list -m client.v8```
 
 Build like a particular bot from waterfall client.v8 in folder foo:
