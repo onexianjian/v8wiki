@@ -52,3 +52,13 @@ You can also pass the arguments on the command line:
 This will generate build files for compiling V8 with the arm64 simulator in release mode using goma for compilation. For an overview of all available gn arguments run:
 
 ```gn args out.gn/foo --list```
+
+## Testing
+
+You can pass the output directory to the test driver. Other relevant flags will be inferred from the build:
+
+```tools/run-tests.py --outdir out.gn/foo```
+
+You can also test your most recently compiled build:
+
+```tools/run-tests.py --gn```
