@@ -23,7 +23,7 @@ gclient sync
 
 ### GCC + make
 
-Requires GNU make 3.81 or later. Should work with any GCC >= 4.8 or any recent clang (3.5 highly recommended).
+Requires GNU make 3.81 or later. Should work with any GCC >= 4.8 or any recent clang (3.5 highly recommended). For the officially supported clang version please check [V8's DEPS file](https://chromium.googlesource.com/v8/v8/+/master/DEPS).
 
 #### Build instructions
 
