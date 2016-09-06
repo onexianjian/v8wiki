@@ -15,6 +15,8 @@ following categories:
     * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=label%3AClusterFuzz+component%3ABlink%3EJavaScript+status%3AUntriaged&colspec=ID+Pri+M+Stars+ReleaseBlock+Component+Status+Owner+Summary+OS+Modified&x=m&y=releaseblock&cells=ids) query.
     * No CC needed, will be triaged by a sheriff automatically
 
+If you need the attention of a sheriff, please consult the rotation information.
+
 Assign remaining issues to hablich@c....org.
 
 Use the component `Blink>JavaScript` on all issues.
