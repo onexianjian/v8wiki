@@ -21,6 +21,8 @@
    * [Becoming a committer](Becoming a committer)
    * [Handling of Ports](Handling of Ports)
    * [Reporting security bugs](Reporting security bugs)
+* Automated test infrastructure
+   * [Blink layout tests](Blink layout tests)
 * Documentation
    * Debugging
       * [Debugging Protocol](Debugging Protocol)
