@@ -23,6 +23,8 @@ out/ia32.release/d8 --prof script.js
 
 Log file processing is done using JS scripts running by the d8 shell. For this to work, a `d8` binary (or symlink, or `d8.exe` on Windows) must be in the root of your V8 checkout, or in the path specified by the environment variable `D8_PATH`. Note: this binary is just used to process the log, but not for the actual profiling, so it doesn't matter which version etc. it is.
 
+**Make sure `d8` used for analysis was not build with `is_component_build`!**
+
 Windows:
 ```
 tools\windows-tick-processor.bat v8.log
