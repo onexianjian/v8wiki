@@ -4,9 +4,8 @@ On test failures, the bots compare the results of V8 ToT with Chromium's pinned 
 
 Commits with newly introduced failures are normally reverted to unblock auto-rolling into Chromium. In case you break layout tests and the changes are expected, follow this procedure:
 
-  1. Land a Chromium-side change setting NeedsManualRebaseline for the changed tests (see [more](https://www.chromium.org/developers/testing/webkit-layout-tests/testexpectations#TOC-Rebaselining)).
-  1. Land your V8 CL.
-  1. Wait 1-2 days until your V8 CL has rolled into Chromium.
-  1. Switch NeedsManualRebaseline to NeedsRebaseline on the Chromium-side. Test will be rebaselined automatically.
+  1. Land a Chromium change setting NeedsManualRebaseline for the changed tests ([more](https://www.chromium.org/developers/testing/webkit-layout-tests/testexpectations#TOC-Rebaselining)).
+  1. Land your V8 CL and wait 1-2 days until it cycles into Chromium.
+  1. Switch NeedsManualRebaseline to NeedsRebaseline in Chromium. Tests will be automatically rebaselined.
 
 Please associate all CLs with a BUG.
