@@ -24,6 +24,8 @@ d8 --enable-tracing --trace-config=traceconfig.json
 
 To get Runtime Call Statistics, please record the trace with the following 2 categories enabled: `v8` and `disabled-by-default-v8.runtime_stats`. Each top level V8 trace event will contain the runtime statistics for the period of that event. By selecting any of those events in trace-viewer, the runtime stats table will be displayed in the lower panel, selecting multiple will create a merged view.
 
+![](images/runtimestats_traceviewer.png)
+
 # Enabling GC Object Statistics in tracing
 
 To get the GC Object Statistics in tracing, you need to collect a trace with `disabled-by-default.v8.gc_stats` category enabled also you need to use the following js-flags:
@@ -31,3 +33,5 @@ To get the GC Object Statistics in tracing, you need to collect a trace with `di
 --track_gc_object_stats --noincremental-marking
 ```
 Once you load the trace in trace-viewer, search for slices named: `V8.GC_Object_Stats`, in the lower panel you will find the statistics. Selecting multiple slices will create a merged view.
+
+![](images/gcstats_traceviewer.png)
