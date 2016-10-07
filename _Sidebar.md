@@ -33,6 +33,7 @@
       * [V8 Profiler](V8 Profiler)
       * [Using V8's Internal Profiler](Using V8’s internal profiler)
       * [Profiling Chromium with v8](Profiling Chromium with v8)
+      * [Tracing V8](Tracing V8)
    * Embedding V8
       * [Getting Started](Getting Started with Embedding)
       * [Example code](Example code)
