@@ -6,6 +6,8 @@
 Please move issues to the V8 specialty sheriffs queue of one of the
 following categories:
 
+  * Memory: `component:blink>javascript status=Untriaged Performance:Memory`
+    * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=component%3Ablink%3Ejavascript+status%3DUntriaged+Performance%3AMemory+&colspec=ID+Pri+M+Stars+ReleaseBlock+Cr+Status+Owner+Summary+OS+Modified&x=m&y=releaseblock&cells=tiles) query
   * Stability: `status=available component:Blink>JavaScript label:Stability -label:Clusterfuzz`
     * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=status%3Davailable+component%3ABlink%3EJavaScript+label%3AStability+-label%3AClusterfuzz) query
     * No CC needed, will be triaged by a sheriff automatically
