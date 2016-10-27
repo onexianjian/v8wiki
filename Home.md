@@ -8,5 +8,5 @@ V8 is Google's open source high-performance JavaScript engine, written in C++ an
 Additionally to this wiki you can find more information here:
 
  * *User mailing list*: http://groups.google.com/group/v8-users
- * *V8 blog* http://v8project.blogspot.com/
- * *File bugs* https://bugs.chromium.org/p/v8/issues/entry?template=Defect%20report%20from%20user
+ * *V8 blog*: http://v8project.blogspot.com/
+ * *File bugs*: https://bugs.chromium.org/p/v8/issues/entry?template=Defect%20report%20from%20user
