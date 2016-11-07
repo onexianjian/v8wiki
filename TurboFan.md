@@ -7,6 +7,7 @@ TurboFan is one of V8's optimizing compilers leveraging a concept called "[Sea o
 
 These are design documents that are mostly concerned with TurboFan internals.
 
+* [Function context specialization](https://docs.google.com/document/d/1CJbBtqzKmQxM1Mo4xU0ENA7KXqb1YzI6HQU8qESZ9Ic)
 * [Rest Parameters and Arguments Exotic Objects optimization plan](https://docs.google.com/document/d/1DvDx3Xursn1ViV5k4rT4KB8HBfBb2GdUy3wzNfJWcKM)
 * [TurboFan Developer Tools Integration](https://docs.google.com/document/d/1zl0IA7dbPffvPPkaCmLVPttq4BYIfAe2Qy8sapkYgRE)
 * [TurboFan Inlining](https://docs.google.com/document/d/1l-oZOW3uU4kSAHccaMuUMl_RCwuQC526s0hcNVeAM1E)
