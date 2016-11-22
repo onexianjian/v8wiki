@@ -22,6 +22,7 @@
    * [Handling of Ports](Handling of Ports)
    * [Reporting security bugs](Reporting security bugs)
 * Automated test infrastructure
+   * [API stability](API stability)
    * [Blink layout tests](Blink layout tests)
 * Documentation
    * Debugging
