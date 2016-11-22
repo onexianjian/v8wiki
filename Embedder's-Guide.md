@@ -26,7 +26,7 @@ There are several types of handles:
   - A `UniquePersistent<SomeType>` handle relies on C++ constructors and destructors to manage the lifetime of the underlying object.
   - A `Persistent<SomeType>` can be constructed with its constructor, but must be explicitly cleared with `Persistent::Reset`.
 
-- There are other types of handles which are rarely used, that we will only briefly mention her
+- There are other types of handles which are rarely used, that we will only briefly mention here
   - `Eternal` is a persistent handle for JavaScript objects that are expected to never be deleted. It is cheaper to use because it relieves the garbage collector from determining the liveness of that object.
   - Both Persistent and UniquePersistent cannot be copied, which makes them unsuitable as values with pre-C++11 standard library containers. `PersistentValueMap` and `PersistentValueVector` provide container classes for persistent values, with map and vector-like semantics. C++11 embedders do not require these, since C++11 move semantics solve the underlying problem.
 
