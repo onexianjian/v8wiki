@@ -31,7 +31,7 @@ To use V8's integration with Linux perf you need to build it with the appropriat
 
 Alternatively, you create a new clean build configuration with only the single build flag set to enable perf support:
 ```
-cd *<path_to_your_v8_checkout>*
+cd <path_to_your_v8_checkout>
 tools/dev/v8gen.py x64.release
 echo "enable_profiling = true" >> out.gn/x64.release/args.gn
 ninja -C out.gn/x64.release
