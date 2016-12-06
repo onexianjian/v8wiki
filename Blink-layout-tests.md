@@ -1,4 +1,4 @@
-We continuously run [layout tests](https://www.chromium.org/developers/testing/webkit-layout-tests) on our [FYI waterfall](https://build.chromium.org/p/client.v8.fyi/console?branch=master) to prevent integration problems with Chromium.
+We continuously run [layout tests](https://chromium.googlesource.com/chromium/src/+/master/docs/testing/layout_tests.md) on our [FYI waterfall](https://build.chromium.org/p/client.v8.fyi/console?branch=master) to prevent integration problems with Chromium.
 
 On test failures, the bots compare the results of V8 ToT with Chromium's pinned V8 version, to only flag newly introduced V8 problems (with false positives <<5%). Blame assignment is trivial as the [linux release](https://build.chromium.org/p/client.v8.fyi/builders/V8-Blink%20Linux%2064) bot tests all revisions.
 
