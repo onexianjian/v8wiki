@@ -20,6 +20,7 @@ sudo apt-get install libdw-dev libunwind8-dev systemtap-sdt-dev libaudit-dev lib
 
 Download kernel sources that includes the latest perf tool source:
 ```
+cd <path_to_kernel_checkout>
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git
 cd tip/tools/perf
 make
@@ -37,4 +38,23 @@ echo "enable_profiling = true" >> out.gn/x64.release/args.gn
 ninja -C out.gn/x64.release
 ```
 
+# Running d8 with perf flags
 
+Once you have the right kernel, perf tool and build of V8, you can add the --perf-prof and --perf-prof-debug-info flags to V8 to record performance samples in JIT code. Here's an example that records samples from a test JavaScript file:
+```
+cd <path_to_your_v8_checkout>
+echo "(function f() { var s = 0; for (var i = 0; i < 1000000000; i++) { s += i; } return s; })();" > test.js
+<path_to_kernel_checkout>/tip/tools/perf/perf record -k mono out/x64.release/d8 --perf-prof --perf-prof-debug-info test.js
+```
+
+# Evaluating perf output
+
+After execution finishes, you must combine the static information gathered from the perf tool with the performance samples output by V8 for JIT code:
+```
+<path_to_kernel_checkout>/tip/tools/perf/perf inject -j -i perf.data -o perf.data.jitted
+```
+
+Finally you can use the Linux perf tool to explore the performance bottlenecks in your JITted code:
+```
+<path_to_kernel_checkout>/tip/tools/perf/perf report -i perf.data.jitted
+```
