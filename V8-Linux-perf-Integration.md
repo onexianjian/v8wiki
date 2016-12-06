@@ -25,3 +25,15 @@ cd tip/tools/perf
 make
 ```
 
+# Build
+
+To use V8's integration with Linux perf you need to build it with the appropriate GN build flag activated. You can set "enable_profiling = true" in an existing GN build configuration.
+
+Alternatively, you create a new clean build configuration with only the single build flag set to enable perf support:
+```
+cd v8
+tools/dev/v8gen.py x64.perf
+echo "enable_profiling = true" >> out.gn/x64.perf/args.gn
+```
+
+
