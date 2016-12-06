@@ -5,7 +5,7 @@ V8 has built-in support for the Linux perf tool. By default, this support is dis
 # Setup
 
 In order to analyze V8 JIT code with the Linux perf tool you will need to:
-- Use a very recent Linux kernel that provides high-resolution timing information to synchronize V8 JIT code performance data with the standard performance data collected by the Linux perf tool.
+- Use a very recent Linux kernel that provides high-resolution timing information to the perf tool and to V8's perf integration in order to synchronize JIT code performance samples with the standard performance data collected by the Linux perf tool.
 - Use a recent very recent version of the Linux perf tool or apply the patch that supports JIT code to perf and build it yourself.
 
 Install a new Linux kernel (will require a reboot):
