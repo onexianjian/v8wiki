@@ -29,6 +29,10 @@ make
 # Build
 
 To use V8's integration with Linux perf you need to build it with the appropriate GN build flag activated. You can set "enable_profiling = true" in an existing GN build configuration.
+```
+echo "enable_profiling = true" >> out.gn/x64.release/args.gn
+ninja -C out.gn/x64.release
+```
 
 Alternatively, you create a new clean build configuration with only the single build flag set to enable perf support:
 ```
