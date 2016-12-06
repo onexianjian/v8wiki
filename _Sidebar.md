@@ -31,7 +31,7 @@
       * [ARM Debugging](ARM Debugging)
       * [GDB JIT Interface](GDB JIT Interface)
    * Writing Optimizable JavaScript
-      * [V8 Profiler](V8 Profiler)
+      * [V8 Profiler](V8 Internal Profiler)
       * [Using V8's Internal Profiler](Using V8’s internal profiler)
       * [Profiling Chromium with v8](Profiling Chromium with v8)
       * [Tracing V8](Tracing V8)
