@@ -15,7 +15,7 @@ sudo apt-get install linux-generic-lts-wily
 
 Install dependencies:
 ```
-sudo apt-get install libdw-dev libunwind8-dev
+sudo apt-get install libdw-dev libunwind8-dev systemtap-sdt-dev libaudit-dev libslang2-dev binutils-dev liblzma-dev
 ```
 
 Download kernel sources that includes the latest perf tool source:
