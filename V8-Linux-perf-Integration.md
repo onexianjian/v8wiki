@@ -44,7 +44,7 @@ Once you have the right kernel, perf tool and build of V8, you can add the --per
 ```
 cd <path_to_your_v8_checkout>
 echo "(function f() { var s = 0; for (var i = 0; i < 1000000000; i++) { s += i; } return s; })();" > test.js
-<path_to_kernel_checkout>/tip/tools/perf/perf record -k mono out/x64.release/d8 --perf-prof --perf-prof-debug-info test.js
+<path_to_kernel_checkout>/tip/tools/perf/perf record -k mono out.gn/x64.release/d8 --perf-prof --perf-prof-debug-info test.js
 ```
 
 # Evaluating perf output
