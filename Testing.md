@@ -66,3 +66,17 @@ tools/run-tests.py --progress=verbose --outdir=out --arch=ia32 --mode=release we
 ```
 
 Replace --arch and other parameters with values that match your build options.
+
+## Updating the bytecode expectations
+
+Sometimes the bytecode expectations may change resulting in cctest failures. To update the golden files, build `test/cctest/generate-bytecode-expectations` by running:
+```
+ ninja -C out.gn/x64.release generate-bytecode-expectations
+```
+
+and then updating the default set of inputs by passing the `--rebaseline` flag to the generated binary:
+```
+ ./out.gn/x64.release/generate-bytecode-expectations --rebaseline
+```
+
+The updated goldens will be available in ` test/cctest/interpreter/bytecode_expectations/`
