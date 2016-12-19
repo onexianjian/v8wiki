@@ -1,6 +1,6 @@
 * [What is V8?](Home)
 * [Introduction](Introduction)
-* [Building from Source](Building from Source)
+* [Building from Source (Start here)](Building from Source)
    * [Checking out source](Checking out source)
    * [Using Git](Using Git)
    * [Building with GN](Building with GN)
