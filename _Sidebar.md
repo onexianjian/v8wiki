@@ -1,14 +1,11 @@
 * [What is V8?](Home)
 * [Introduction](Introduction)
-* Usage
-   * Building from Source
-      * [Checking out source](Checking out source)
-      * [Using Git](Using Git)
-      * [Building with GN](Building with GN)
-      * [Deprecated: Building with Gyp](Building with Gyp)
-      * [Cross-compiling for ARM](Cross-compiling for ARM)
-   * Using D8
-      * [D8 on Android](D8 on Android)
+* Building from Source
+   * [Checking out source](Checking out source)
+   * [Using Git](Using Git)
+   * [Building with GN](Building with GN)
+   * [Deprecated: Building with Gyp](Building with Gyp)
+   * [Cross-compiling for ARM](Cross-compiling for ARM)
 * [Contributing](Contributing)
    * [Code of conduct](Code of conduct)
    * [Committer's responsibility](Committer's responsibility)
@@ -25,6 +22,8 @@
    * [API stability](API stability)
    * [Blink layout tests](Blink layout tests)
 * Documentation
+   * [Using D8](Using D8)
+      * [D8 on Android](D8 on Android)
    * Debugging
       * [Debugging Protocol](Debugging Protocol)
       * [Stack Trace API](Stack Trace API)
