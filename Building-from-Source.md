@@ -11,7 +11,7 @@ More in-depth information can be found [here](https://github.com/v8/v8/wiki/Chec
 ```
 gclient
 ```
-4.) Go into the directory where you want to download the V8 source into and execute the following into your terminal/shell:
+4.) Go into the directory where you want to download the V8 source into and execute the following in your terminal/shell:
 ```
 fetch v8
 cd v8
