@@ -1,4 +1,4 @@
-In order to be able to build V8 from scratch (on Linux/Mac x64) please heed the following steps:
+In order to be able to build V8 from scratch **on Linux/Mac for x64** please heed the following steps:
 
 # Getting the V8 source TL;DR;
 More in-depth information can be found [here](https://github.com/v8/v8/wiki/Checking%20out%20source).
