@@ -8,8 +8,8 @@ following categories:
 
   * Memory: `component:blink>javascript status=Untriaged label:Performance-Memory`
     * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=component%3Ablink%3Ejavascript+status%3DUntriaged+label%3APerformance-Memory+&colspec=ID+Pri+M+Stars+ReleaseBlock+Cr+Status+Owner+Summary+OS+Modified&x=m&y=releaseblock&cells=tiles) query
-  * Stability: `status=available component:Blink>JavaScript label:Stability -label:Clusterfuzz`
-    * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=status%3Davailable+component%3ABlink%3EJavaScript+label%3AStability+-label%3AClusterfuzz) query
+  * Stability: `status=available,untriaged component:Blink>JavaScript label:Stability -label:Clusterfuzz`
+    * Will show up in [this]https://bugs.chromium.org/p/chromium/issues/list?can=2&q=status%3Davailable%2Cuntriaged+component%3ABlink%3EJavaScript+label%3AStability+-label%3AClusterfuzz&colspec=ID+Pri+M+Stars+ReleaseBlock+Component+Status+Owner+Summary+OS+Modified&x=m&y=releaseblock&cells=ids) query
     * No CC needed, will be triaged by a sheriff automatically
   * Performance: hablich@c....org, mvstaton@c....org
   * Clusterfuzz: Set the bug to the following state:
