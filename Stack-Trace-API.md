@@ -43,7 +43,7 @@ The stack trace mechanism used for built-in errors is implemented using a genera
 Error.captureStackTrace(error, constructorOpt)
 ```
 
-adds a stack property to the given `error` object that will yield the stack trace at the time captureStackTrace was called.  The reason for not just returning the formatted stack trace directly is that this way we can postpone the formatting of the stack trace until the stack property is accessed and avoid formatting completely if it never is.
+adds a stack property to the given `error` object that will yield the stack trace at the time captureStackTrace was called.  Stack traces collected through `Error.captureStackTrace` are immediately collected, formatted, and attached to the given `error` object.
 
 The optional `constructorOpt` parameter allows you to pass in a function value.  When collecting the stack trace all frames above the topmost call to this function, including that call, will be left out of the stack trace.  This can be useful to hide implementation details that won't be useful to the user.  The usual way of defining a custom error that captures a stack trace would be:
 
@@ -65,7 +65,7 @@ For efficiency stack traces are not formatted when they are captured but on dema
 Error.prepareStackTrace(error, structuredStackTrace)
 ```
 
-and using whatever this call returns as the value of the `stack` property.  If you assign a different function value to `Error.prepareStackTrace` that function will be used to format stack traces.  It will be passed the error object that it is preparing a stack trace for and a structured representation of the stack.  User stack trace formatters are free to format the stack trace however they want and even return non-string values.  It is safe to retain references to the structured stack trace object after a call to prepareStackTrace completes so that it is also a valid return value.  Note that the custom prepareStackTrace function is immediately called at the point when the error object is created (e.g. with `new Error()`).
+and using whatever this call returns as the value of the `stack` property.  If you assign a different function value to `Error.prepareStackTrace` that function will be used to format stack traces.  It will be passed the error object that it is preparing a stack trace for and a structured representation of the stack.  User stack trace formatters are free to format the stack trace however they want and even return non-string values.  It is safe to retain references to the structured stack trace object after a call to prepareStackTrace completes so that it is also a valid return value.  Note that the custom prepareStackTrace function is only called once the stack property of `Error` object is accessed.
 
 The structured stack trace is an Array of CallSite objects, each of which represents a stack frame.  A CallSite object defines the following methods
 
