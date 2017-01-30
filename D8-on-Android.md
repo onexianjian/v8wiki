@@ -2,13 +2,13 @@
   * a Linux/Mac workstation
   * v8 r12178 (on Google Code) or later
   * an Android emulator or device with matching USB cable
-  * make sure [building with GYP](http://code.google.com/p/v8-wiki/wiki/BuildingWithGYP) works
+  * make sure [building with GYP](https://github.com/v8/v8/wiki/Building%20with%20Gyp) works
   * [Mac-only] [Download the NDK](http://developer.android.com/ndk/downloads/index.html) and note the path where it is installed. 
 
 
 # Get the code
 
-  * Use the instructions from https://code.google.com/p/v8-wiki/wiki/UsingGit to get the code
+  * Use the instructions from https://github.com/v8/v8/wiki/Using%20Git to get the code
   * Once you need to add the android dependencies:
 ```
 v8$ echo "target_os = ['android']" >> ../.gclient && gclient sync --nohooks
