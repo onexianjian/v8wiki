@@ -116,7 +116,7 @@ git cl try --revision=1234
   1. Commit some changes to a git branch in the local repo.
   1. Try the change by sending a try job to the try bots like this:
 ```
-git try
+git cl try
 ```
   1. Wait for the try bots to build and you will get an e-mail with the result. Note: There are issues with some of the slaves at the moment. Sending try jobs from codereview is recommended.
 
@@ -124,11 +124,11 @@ git try
 
 The revision argument tells the try bot what revision of the code base will be used for applying your local changes to. Without the revision, our LKGR revision is used as the base (http://v8-status.appspot.com/lkgr).
 ```
-git try --revision=1234
+git cl try --revision=1234
 ```
 To avoid running your try job on all bots, use the --bot flag with a comma-separated list of builder names. Example:
 ```
-git try --bot=v8_mac_rel
+git cl try --bot=v8_mac_rel
 ```
 
 ### Viewing the try server
