@@ -176,7 +176,7 @@ You need Visual Studio 2013, older versions might still work at the moment, but 
 
 If you are a non-googler you need to ```set DEPOT_TOOLS_WIN_TOOLCHAIN=0``` in the CMD. For further information about building on Windows have a look at [Chromium's build instructions](https://chromium.googlesource.com/chromium/src/+/master/docs/windows_build_instructions.md).
 
-After you created [checkout of V8](using_git.md), all dependencies will be already installed.
+After you created [checkout of V8](Using Git), all dependencies will be already installed.
 
 If you are getting errors during build mentioning that 'python' could not be found, add the 'python.exe' to PATH.
 
