@@ -18,7 +18,7 @@ See [Checking out source](Checking out source).
 
 # Submit your code
 
-The source code of V8 follows the [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) so you should familiarize yourself with those guidelines.  Before submitting code you must pass all our [tests](http://code.google.com/p/v8-wiki/wiki/Testing), and have to successfully run the presubmit checks:
+The source code of V8 follows the [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) so you should familiarize yourself with those guidelines.  Before submitting code you must pass all our [tests](Testing), and have to successfully run the presubmit checks:
 
 > `tools/presubmit.py`
 
