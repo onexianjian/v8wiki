@@ -8,7 +8,7 @@
 
 # Get the code
 
-  * Use the instructions from https://github.com/v8/v8/wiki/Using%20Git to get the code
+  * Use the instructions from [Using Git](Using Git) to get the code
   * Once you need to add the android dependencies:
 ```
 v8$ echo "target_os = ['android']" >> ../.gclient && gclient sync --nohooks
