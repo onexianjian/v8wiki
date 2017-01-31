@@ -31,7 +31,7 @@ From a compatibility risk perspective, bugs and inadvertent incompatibilities in
 With this in mind, we expect all JavaScript changes implemented in V8 to be accompanied by:
 
 1. **Assessment of the impact on the codebase**. V8 is a highly complex and tightly knit codebase with many interdependencies; support cost for particularly pervasive features might be substantial.
-2. **Conformance tests**, ideally suitable for future inclusion in [ECMA-262 test suite](http://test262.ecmascript.org/).
+2. **Conformance tests**, ideally suitable for future inclusion in [ECMA-262 test suite](https://github.com/tc39/test262).
 3. **Performance tests**.
 
 As the implementation of a particular feature progresses, we expect both conformance and performance test suites to progress in parallel.
