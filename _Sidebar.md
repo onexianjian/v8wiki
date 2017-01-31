@@ -42,8 +42,6 @@
       * [Runtime functions](Runtime functions)
       * [i18n support](i18n support)
       * [[External] V8 API](http://v8.paulfryzel.com/docs/master/index.html)
-   * Experiments
-      * [Strong Mode & SoundScript](Experiments with Strengthening JavaScript)
    * Under the Hood
       * [Design Elements](Design Elements)
       * [Interpreter](Interpreter)
