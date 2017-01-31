@@ -25,7 +25,6 @@
    * [Using D8](Using D8)
       * [D8 on Android](D8 on Android)
    * Debugging
-      * [Debugging Protocol](Debugging Protocol)
       * [Stack Trace API](Stack Trace API)
       * [ARM Debugging](ARM Debugging)
       * [GDB JIT Interface](GDB JIT Interface)
