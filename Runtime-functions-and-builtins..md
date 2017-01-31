@@ -1,0 +1,5 @@
+A portion of JavaScript built-in functions such as Array.prototype.sort is implemented in JavaScript themselves. They can be found in files located in src/js. However, part of these implementations cannot be expressed in JavaScript, and are handled by C++ code that we call "runtime functions". These runtime functions are called with their names prefixed by %.
+
+Usually, these runtime functions are limited to V8 internal JavaScript code. For debugging purposes, they can also be called from normal JavaScript code if V8 is run with the flag --allow-natives-syntax. Some runtime functions are embedded directly by the compiler into generated code. For a list, see src/runtime/runtime.h.
+
+Aside from these runtime functions, V8 also defines a large number of so-called built-ins. Built-ins are snippets of code that can either implement an entire function, or act as a piece of glue code. Built-ins can be implemented in platform-dependent assembly, via CodeStubAssembler, or directly in C++. For a list, see src/builtins/builtins.h.
