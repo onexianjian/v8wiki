@@ -44,7 +44,7 @@ Language features implemented in V8 go over 3 stages: experimental implementatio
 
 Anyone who wants to implement a feature in V8 must contact [v8-users@googlegroups.com](v8-users@googlegroups.com) with an intent-to-implement e-mail. Then follow these steps:
 
-- Clarify the feature status with regard to the criteria in the [guidelines](https://developers.google.com/v8/launchprocess#guidelines) (TC39 acceptance, interest from browser vendors, testing plans) in an intent-to-implement e-mail.
+- Clarify the feature status with regard to the criteria in the guidelines on this page (TC39 acceptance, interest from browser vendors, testing plans) in an intent-to-implement e-mail.
 - Provide a design doc to clarify V8 code base impact.
 - The implementation should also consider DevTools support.
 - Implement the feature under V8 "--harmony-X" flag.
