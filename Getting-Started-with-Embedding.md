@@ -19,7 +19,7 @@ These concepts are discussed in greater detail in the [Embedder's Guide](Embedde
 
 Follow the steps below to run the example yourself:
 
-1. Download the V8 source code and build V8 by following the [download](Checking out source) and [build](Building with Gyp) instructions.
+1. Download the V8 source code and build V8 by following the [download](Checking out source) and [build](Building with GN) instructions.
   1. This hello world example is compatible with the version 4.8. You can check out this branch with `git checkout -b 4.8 -t branch-heads/4.8`.
   2. Build via `make x64.release` on a Linux x64 system to generate the correct binaries.
 2. Copy the complete code from the previous section (the second code snippet), paste it into your favorite text editor, and save as `hello_world.cpp` in the V8 directory that was created during your V8 build.
