@@ -39,7 +39,7 @@
       * [Getting Started](Getting Started with Embedding)
       * [Example code](Example code)
       * [Embedder's Guide](Embedder's Guide)
-      * [Runtime functions](Runtime functions)
+      * [Runtime Functions and Builtins](Runtime-Functions-and-Builtins)
       * [i18n support](i18n support)
       * [[External] V8 API](http://v8.paulfryzel.com/docs/master/index.html)
    * Under the Hood
