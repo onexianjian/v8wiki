@@ -1,5 +1,3 @@
-*Version 2, October 8th, 2014*
-
 The V8 project aims to develop a high-performance, standards-compliant ECMAScript/JavaScript implementation. This document outlines our guidelines for "language-facing" changes and the process through which they are enforced.
 
 # Guidelines
