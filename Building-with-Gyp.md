@@ -1,7 +1,7 @@
 **Build issues? File a bug at code.google.com/p/v8/issues or ask for help on v8-users@googlegroups.com.**
 
 ***
-**GYP is going to be deprecated in favor of [GN](Building with GN) in the future**
+**GYP has been deprecated in favor of [GN](Building with GN).**
 ***
 # Building V8
 
@@ -160,7 +160,7 @@ Note: If you have configured your `GYP_GENERATORS` environment variable, either 
 #### Custom build settings
 
 You can export the `GYP_DEFINES` environment variable in your shell to configure custom build options. The syntax is `GYP_DEFINES="-Dvariable1=value1 -Dvariable2=value2"` and so on for as many variables as you wish. Possibly interesting options include:
-  * `-Dcomponent=shared_library` (see `library=shared` in the [GCC + make](#Optional_parameters.md) section above)
+  * `-Dcomponent=shared_library` (see `library=shared` in the [GCC + make](#optional-parameters) section above)
   * `-Dconsole=readline` (see `console=readline`)
   * `-Dv8_enable_disassembler=1` (see `disassembler=on`)
   * `-Dv8_use_snapshot='false'` (see `snapshot=off`)
@@ -218,7 +218,7 @@ gypfiles/gyp_v8
 
 #### Custom build settings
 
-See the "custom build settings" section for [Xcode](#Xcode) above.
+See the "custom build settings" section for [Xcode](#xcode) above.
 
 
 #### Running tests
