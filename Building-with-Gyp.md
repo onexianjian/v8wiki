@@ -264,4 +264,4 @@ Building and testing:
 
 
 # Final Note
-<font color='darkred'><b>If you have problems or questions, please file bugs at code.google.com/p/v8/issues or send mail to v8-users@googlegroups.com. Comments on this page are likely to go unnoticed and unanswered.</b></font>
+<b>If you have problems or questions, please [file bugs](https://bugs.chromium.org/p/v8/issues/list) or send an email to v8-users@googlegroups.com.</b>
