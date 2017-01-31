@@ -1,8 +1,8 @@
 # What is a committer?
 
-Technically, a committer is someone who has write access to the V8 Git repository. A committer can submit his or her own patches or patches from others.
+Technically, committers are people who have write access to the V8 Git repository. Committers can submit their own patches or patches from others.
 
-This privilege is granted with some expectation of responsibility: committers are people who care about the V8 project and want to help meet its goals. A committer is not just someone who can make changes, but someone who has demonstrated his or her ability to collaborate with the team, get the most knowledgeable people to review code, contribute high-quality code, and follow through to fix issues (in code or tests).
+This privilege is granted with some expectation of responsibility: committers are people who care about the V8 project and want to help meet its goals. Committers are not just people who can make changes, but people who have demonstrated their ability to collaborate with the team, get the most knowledgeable people to review code, contribute high-quality code, and follow through to fix issues (in code or tests).
 
 A committer is a contributor to the V8 projects' success and a citizen helping the projects succeed. See [Committers Responsibility](Committer's responsibility).
 
@@ -25,7 +25,7 @@ A current committer nominates you by sending email to v8-committers@googlegroups
 
 Two other committers need to second your nomination. If no one objects in 5 working days (U.S.), you're a committer.  If anyone objects or wants more information, the committers discuss and usually come to a consensus (within the 5 working days). If issues cannot be resolved, there's a vote among current committers.
 
-Once you get approval from the existing committers, we'll send you instructions for write access to SVN or Git. You'll also be added to v8-committers@googlegroups.com.
+Once you get approval from the existing committers, we'll send you instructions for write access to Git. You'll also be added to v8-committers@googlegroups.com.
 
 In the worst case, this can drag out for two weeks. Keep writing patches! Even in the rare cases where a nomination fails, the objection is usually something easy to address like "more patches" or "not enough people are familiar with this person's work."
 
