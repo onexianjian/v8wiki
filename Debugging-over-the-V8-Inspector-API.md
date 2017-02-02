@@ -59,3 +59,5 @@ send(msg);
 ```
 
 A more fleshed-out example of Inspector API usage is available at [test-api.js](https://cs.chromium.org/chromium/src/v8/test/debugger/test-api.js?type=cs&q=test-api&l=1), which implements a simple debugging API for use by V8's test suite.
+
+See the [full documentation](https://chromedevtools.github.io/debugger-protocol-viewer/tot/) of all available functions for more information.
