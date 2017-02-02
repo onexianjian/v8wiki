@@ -56,8 +56,14 @@ const msg = JSON.stringify({
 
 // Call the function provided by d8.
 send(msg);
+
+// Run this file by executing 'd8 --enable-inspector inspector-demo.js'.
 ```
+
+# Further Documentation
 
 A more fleshed-out example of Inspector API usage is available at [test-api.js](https://cs.chromium.org/chromium/src/v8/test/debugger/test-api.js?type=cs&q=test-api&l=1), which implements a simple debugging API for use by V8's test suite.
 
-See the [full documentation](https://chromedevtools.github.io/debugger-protocol-viewer/tot/) of all available functions for more information.
+V8 also contains an alternative Inspector integration at [inspector-test.cc](https://cs.chromium.org/chromium/src/v8/test/inspector/inspector-test.cc?q=inspector-te+package:%5Echromium$&l=1).
+
+The Chrome Devtools wiki provides [full documentation](https://chromedevtools.github.io/debugger-protocol-viewer/tot/) of all available functions.
