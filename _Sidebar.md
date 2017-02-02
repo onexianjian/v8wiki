@@ -25,7 +25,7 @@
    * [Using D8](Using D8)
       * [D8 on Android](D8 on Android)
    * Debugging
-      * [Debugging over the V8 Inspector API](Debugging over the V8 Inspector API)
+      * [V8 Inspector API](Debugging over the V8 Inspector API)
       * [Stack Trace API](Stack Trace API)
       * [ARM Debugging](ARM Debugging)
       * [GDB JIT Interface](GDB JIT Interface)
