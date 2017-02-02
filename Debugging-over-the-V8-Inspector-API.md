@@ -16,7 +16,8 @@ V8's [command-line debug shell d8](Using D8) includes a simple inspector integra
   }
 ```
 
-while the frontend establishes a channel for messages sent from V8 to the embedder:
+while the frontend establishes a channel for messages sent from V8 to the embedder by implementing
+sendResponse and sendNotification, which then forward to:
 
 ```c++
   void Send(const v8_inspector::StringView& string) {
@@ -37,3 +38,24 @@ while the frontend establishes a channel for messages sent from V8 to the embedd
   }
 ```
 
+# Using the Inspector Protocol
+
+Continuing with our example, d8 forwards inspector messages to JavaScript. The following code implements a basic, but fully functional interaction with inspector through d8:
+
+```js
+// inspector-demo.js
+// Receiver function called by d8.
+function receive(message) {
+  print(message)
+}
+
+const msg = JSON.stringify({
+      id: 0,
+      method: "Debugger.enable",
+    });
+
+// Call the function provided by d8.
+send(msg);
+```
+
+A more fleshed-out example of Inspector API usage is available at [test-api.js](https://cs.chromium.org/chromium/src/v8/test/debugger/test-api.js?type=cs&q=test-api&l=1), which implements a simple debugging API for use by V8's test suite.
