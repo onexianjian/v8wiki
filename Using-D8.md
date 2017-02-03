@@ -15,6 +15,18 @@ out.gn/x64.optdebug/d8 test.js
 > Hello, World!
 ```
 
+## Read from a File
+
+Using `read()` you can store the contents of a file into a variable.
+```
+d8> var license = read("LICENSE");
+d8> license
+"This license applies to all parts of V8 that are not externally
+maintained libraries.  The externally maintained libraries used by V8
+are:
+... (etc.) "
+```
+
 ## Pass Flags Into JavaScript
 
 It's possible to make command line arguments available to your JavaScript code at runtime with D8. Just pass them after `--` on the command line and you will be able to access them at the top level of your script using the `arguments` object.
