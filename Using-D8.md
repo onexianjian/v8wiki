@@ -15,7 +15,7 @@ out.gn/x64.optdebug/d8 test.js
 > Hello, World!
 ```
 
-## Read from a File
+## Reading Input
 
 Using `read()` you can store the contents of a file into a variable.
 ```
@@ -25,6 +25,14 @@ d8> license
 maintained libraries.  The externally maintained libraries used by V8
 are:
 ... (etc.) "
+```
+
+Use `readline()` to interactively enter text:
+```
+d8> var greeting = readline();
+Welcome
+d8> greeting
+"Welcome"
 ```
 
 ## Pass Flags Into JavaScript
