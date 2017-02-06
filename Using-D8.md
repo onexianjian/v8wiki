@@ -15,7 +15,7 @@ out.gn/x64.optdebug/d8 test.js
 > Hello, World!
 ```
 
-## Reading Input
+## Read Input
 
 Using `read()` you can store the contents of a file into a variable.
 ```
@@ -35,7 +35,7 @@ d8> greeting
 "Welcome"
 ```
 
-## Loading External Scripts
+## Load External Scripts
 `load()` runs another JavaScript file in the current context, meaning that you can then access anything declared in that file.
 
 ```
