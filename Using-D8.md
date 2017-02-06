@@ -50,4 +50,4 @@ d8>
 ```
 
 ## More Resources
-[Kevin Eniss' D8 Guide](https://gist.github.com/kevincennis/0cd2138c78a07412ef21) has really good information about exploring V8 using D8. Some of it might be a little bit out-of-date.
+[Kevin Ennis' D8 Guide](https://gist.github.com/kevincennis/0cd2138c78a07412ef21) has really good information about exploring V8 using D8. Some of it might be a little bit out-of-date.
