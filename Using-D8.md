@@ -33,6 +33,7 @@ d8> var greeting = readline();
 Welcome
 d8> greeting
 "Welcome"
+```
 
 ## Loading External Scripts
 `load()` runs another JavaScript file in the current context, meaning that you can then access anything declared in that file.
