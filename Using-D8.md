@@ -34,6 +34,22 @@ Welcome
 d8> greeting
 "Welcome"
 ```
+--- util.js ---
+function greet(name) {
+  return "Hello, " + name;
+}
+```
+```
+d8> load('util.js');
+d8> greet('World!');
+"Hello, World!"
+```
+
+## Loading External Scripts
+`load()` runs another JavaScript file in the current context, meaning that you can then access anything declared in that file.
+
+```
+d8> 
 
 ## Pass Flags Into JavaScript
 
