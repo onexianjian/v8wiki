@@ -1,7 +1,61 @@
+# Cross-compiling with GN
+
+First, make sure you can [build with GN](Building with GN).
+
+Then, add android to your `.gclient` configuration file.
+
+    target_os = ['android']  # Add this to get Android stuff checked out.
+
+The `target_os` field is a list, so if you're also building on unix it'll look like this:
+
+    target_os = ['android', 'unix']  # multiple target oses
+
+Run `gclient sync`, and you'll get a large checkout under `./third_party/android_tools`.
+
+Enable developer mode on your phone or tablet, and turn on USB debugging, via instructions [here](https://developer.android.com/studio/run/device.html). Also, get the handy [adb](https://developer.android.com/studio/command-line/adb.html) tool on your path. It's in your checkout at `./third_party/android_tools/sdk/platform-tools`.
+
+Use `v8gen.py` to generate an arm release or debug build:
+
+    tools/dev/v8gen.py arm.release
+
+Then run `gn args out.gn/arm.release' and make sure you have the following keys:
+
+    target_os = "android"
+    target_cpu = "arm"
+    v8_target_cpu = "arm"
+    is_component_build = false
+
+The keys should be the same for debug builds. If you are building for an arm64 device like the Pixel C, which supports 32bit and 64bit binaries, the keys should look like this:
+
+    target_os = "android"
+    target_cpu = "arm64"
+    v8_target_cpu = "arm64"
+    is_component_build = false
+
+Now build:
+
+    ninja -C out.gn/arm.release d8
+
+Using adb copy the binary and snapshot files to the phone:
+
+    adb push out.gn/arm.release/d8 /data/local/tmp
+    adb push out.gn/arm.release/natives_blob.bin /data/local/tmp
+    adb push out.gn/arm.release/snapshot_blob.bin /data/local/tmp
+
+
+    rebuffat:~/src/v8$ adb shell
+    bullhead:/ $ cd /data/local/tmp
+    bullhead:/data/local/tmp $ ls
+    v8 natives_blob.bin snapshot_blob.bin
+    bullhead:/data/local/tmp $ ./d8
+    V8 version 5.8.0 (candidate)
+    d8> 'w00t!'
+    "w00t!"
+    d8> 
+
+# Building with Gyp
+
 Building V8 with SCons is no longer supported. See [Building with Gyp](Building with Gyp) for more information on how to build.
-
----
-
 
 # Using Sourcery G++ Lite
 
