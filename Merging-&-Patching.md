@@ -59,18 +59,7 @@ You can also merge more than one revision at once, just list them all.
 tools/release/merge_to_branch.py --branch 2.4 af3cf11 cf33f1b sf3cf09
 ```
 
-## Step 2:  Send a notification letter to hablich@chromium.org
-
-Saying something like this:
-```
-_Subject:_ Regression fix merged into V8 2.4 branch (Chrome 8)
-
-_Body:_ We have merged a fix to the V8 version 2.4 branch (the version used in Chrome 8)
-
-Version 2.4.9.10: Issue xxx: The parser doesn't parse.
-```
-
-## Step 3: Observe the [branch waterfall] (https://build.chromium.org/p/client.v8.branches/console)
+## Step 2: Observe the [branch waterfall] (https://build.chromium.org/p/client.v8.branches/console)
 
 If one of the builders is not green after handling your patch, revert the merge immediately. A bot (AutoTagBot) will take care of the correct versioning after a 10 minutes wait time.
 
