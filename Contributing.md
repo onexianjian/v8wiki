@@ -1,5 +1,9 @@
 Here you will find information that you'll need to be able to contribute to V8.  Be sure to read the whole thing before sending us a contribution, including the small print at the end.
 
+# Get the code
+
+See [Checking out source](Checking out source).
+
 # Before you contribute
 
 ## Ask on V8's mailing list for guidance
@@ -11,10 +15,6 @@ Before we can use your code you have to sign the [Google Individual Contributor 
 Contributions made by corporations are covered by a different agreement than the one above, the [Software Grant and Corporate Contributor License Agreement](http://code.google.com/legal/corporate-cla-v1.0.html).
 
 Sign them online [here](https://cla.developers.google.com/)
-
-# Get the code
-
-See [Checking out source](Checking out source).
 
 # Submit your code
 
