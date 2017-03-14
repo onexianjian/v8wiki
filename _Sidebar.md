@@ -6,7 +6,6 @@
    * [Building with GN](Building with GN)
    * [Deprecated: Building with Gyp](Building with Gyp)
    * [Cross-compiling for ARM](Cross-compiling for ARM)
-   * [GUI and IDE access](GUI and IDE access)
 * [Contributing](Contributing)
    * [Code of conduct](Code of conduct)
    * [Committer's responsibility](Committer's responsibility)

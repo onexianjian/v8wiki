@@ -17,3 +17,7 @@ You may want to follow the V8 version that Chrome is shipping on its stable (or 
 V8 public API (basically the files under include/ directory) may change over time. New types/methods may be added without breaking existing functionality. When we decide that want to drop some existing class/methods, we first mark it with [V8\_DEPRECATED](https://code.google.com/p/chromium/codesearch#search/&q=V8_DEPRECATED&sq=package:chromium&type=cs) macro which will cause compile time warnings when the deprecated methods are called by the embedder. We keep deprecated method for one branch and then remove it. E.g. if `v8::CpuProfiler::FindCpuProfile` was plain non deprecated in _3.17_ branch, marked as `V8_DEPRECATED` in _3.18_, it may well be removed in _3.19_ branch.
 
 We also maintain a [document mentioning important API changes](https://docs.google.com/document/d/1g8JFi8T_oAE_7uAri7Njtig7fKaPDfotU6huOa1alds/edit) for each version. 
+
+# GUI and IDE Access
+
+This project's Git repository may be accessed using many different client programs and plug-ins. See your client's documentation for more information.
