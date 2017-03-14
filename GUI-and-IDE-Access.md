@@ -1,5 +1,3 @@
-# GUI and IDE Access
-
 This project's Git repository may be accessed using many different client programs and plug-ins. See your client's documentation for more information.
 
 The source code can be browsed online with [Chromium Codesearch](https://cs.chromium.org/chromium/src/v8/).
