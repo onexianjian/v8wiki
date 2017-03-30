@@ -13,6 +13,7 @@ TurboFan is one of V8's optimizing compilers leveraging a concept called "[Sea o
 * [TurboFan's JIT Design](https://docs.google.com/presentation/d/1sOEF4MlF7LeO7uq-uThJSulJlTh--wgLeaVibsbb3tc)
 * [Fast arithmetic for dynamic languages](https://docs.google.com/a/google.com/presentation/d/1wZVIqJMODGFYggueQySdiA3tUYuHNMcyp_PndgXsO1Y)
 * [Deoptimization in V8](https://docs.google.com/presentation/d/1Z6oCocRASCfTqGq1GCo1jbULDGS-w-nzxkbVF7Up0u0)
+* [TurboFan: A new code generation architecture for V8](https://docs.google.com/presentation/d/1_eLlVzcj94_G4r9j9d_Lj5HRKFnq6jgpuPJtnmIBs88) ([video](https://www.youtube.com/watch?v=M1FBosB5tjM))
 
 # TurboFan Design Documents
 
