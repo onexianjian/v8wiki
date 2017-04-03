@@ -20,6 +20,7 @@
    * [Becoming a committer](Becoming-a-committer)
    * [Handling of Ports](Handling-of-Ports)
    * [Reporting security bugs](Reporting-security-bugs)
+   * [Node.js integration build](What-should-I-do-if-my-CL-broke-the-Node.js-integration-build%3F)
 * Automated test infrastructure
    * [API stability](API-stability)
    * [Blink layout tests](Blink-layout-tests)
