@@ -13,13 +13,13 @@ Let's look at a [Hello World example](https://chromium.googlesource.com/v8/v8/+/
 - A handle scope can be thought of as a container for any number of handles. When you've finished with your handles, instead of deleting each one individually you can simply delete their scope.
 - A context is an execution environment that allows separate, unrelated, JavaScript code to run in a single instance of V8. You must explicitly specify the context in which you want any JavaScript code to be run.
 
-These concepts are discussed in greater detail in the [Embedder's Guide](Embedder's Guide).
+These concepts are discussed in greater detail in the [[Embedder's Guide|Embedder's Guide]].
 
 # Run the Example
 
 Follow the steps below to run the example yourself:
 
-1. Download the V8 source code and build V8 by following the [download](Checking out source) and [build](Building with GN) instructions.
+1. Download the V8 source code and build V8 by following the [[download|Checking out source]] and [[build|Building with GN]] instructions.
   1. This hello world example is compatible with the version 4.8. You can check out this branch with `git checkout -b 4.8 -t branch-heads/4.8`.
   2. Build via `make x64.release` on a Linux x64 system to generate the correct binaries.
 2. Copy the complete code from the previous section (the second code snippet), paste it into your favorite text editor, and save as `hello_world.cpp` in the V8 directory that was created during your V8 build.
@@ -35,4 +35,4 @@ For example, on Linux, still in the V8 directory, type the following at the comm
 `./hello_world`
 6. You will see `Hello, World!`.
 
-Of course this is a very simple example and it's likely you'll want to do more than just execute scripts as strings! For more information see the [Embedder's Guide](Embedder's Guide). If you are looking for an example which is in sync with master simply check out the file [`hello_world.cc`](https://chromium.googlesource.com/v8/v8/+/master/samples/hello-world.cc).
+Of course this is a very simple example and it's likely you'll want to do more than just execute scripts as strings! For more information see the [[Embedder's Guide|Embedder's Guide]]. If you are looking for an example which is in sync with master simply check out the file [`hello_world.cc`](https://chromium.googlesource.com/v8/v8/+/master/samples/hello-world.cc).
