@@ -21,7 +21,7 @@ Follow the steps below to run the example yourself:
 
 1. Download the V8 source code by following the [[git|Using-Git]] instructions.
 1. This hello world example is compatible with version 5.8. You can check out this branch with `git checkout -b 5.8 -t branch-heads/5.8`.
-1. Edit the default build configuration by running `gn args out.gn/x64.release`. Add two lines to your configuration - `is_component_build = false` and `v8_static_library = true`.
+1. Edit the default build configuration by running `gn args out.gn/x64.release`. Add two lines to your configuration: `is_component_build = false` and `v8_static_library = true`.
 1. Build via `ninja -C out.gn/x64.release` on a Linux x64 system to generate the correct binaries.
 1. Compile `hello-world.cpp`, linking to the static libraries created in the build process. For example, on 64bit Linux using the GNU compiler:
 
