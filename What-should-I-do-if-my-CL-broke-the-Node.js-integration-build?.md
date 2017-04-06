@@ -16,7 +16,7 @@ If you already have a Node checkout, add v8/node as remote.
 ```
 cd $NODE
 git remote add v8-fork git@github.com:v8/node.git 
-git checkout -b **vee-eight-lkgr** v8-fork/**vee-eight-lkgr**
+git checkout -b vee-eight-lkgr v8-fork/vee-eight-lkgr
 ```
 
 Apply your patch, i.e., replace node/deps/v8 with a copy of v8 (lkgr branch) and build Node. 
