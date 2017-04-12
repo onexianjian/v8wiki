@@ -137,7 +137,7 @@ Builtin objects such as `Math` are set up mostly in [src/bootstrapper.cc](https:
     SimpleInstallFunction(math, "is42", Builtins::kMathIs42, 1, true);
 ```
 
-Now that Is42 is attached, it can actually be called from JS:
+Now that Is42 is attached, it can be called from JS:
 
 ```
 $ out/debug/d8
