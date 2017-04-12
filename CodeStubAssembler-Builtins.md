@@ -43,7 +43,7 @@ This example demonstrates:
 
 In case you'd like to follow along locally, the following code is based off revision [7a8d20a7](https://chromium.googlesource.com/v8/v8/+/7a8d20a79f9d5ce6fe589477b09327f3e90bf0e0).
 
-## Declaring a new CSA Builtin
+## Declaring MathIs42
 
 Builtins are declared in the `BUILTIN_LIST_BASE` macro in [src/builtins/builtins-definitions.h](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-definitions.h?q=builtins-definitions.h+package:%5Echromium$&l=1). To create a new CSA builtin with JS linkage and one parameter named 'X':
 
@@ -59,3 +59,68 @@ Note that `BUILTIN_LIST_BASE` takes several different macros that denote differe
 * **TFS**: Stub linkage.
 * **TFC**: Stub linkage builtin requiring a custom interface descriptor (e.g. if arguments are untagged or need to be passed in specific registers).
 * **TFH**: Specialized stub linkage builtin used for IC handlers.
+
+## Defining MathIs42
+
+Builtin definitions are located in `src/builtins/builtins-*-gen.cc` files, roughly organized by topic. Since we will be writing a `Math` builtin, we'll put our definition into [src/builtins/builtins-math-gen.cc](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-math-gen.cc?q=builtins-math-gen.cc+package:%5Echromium$&l=1).
+
+```
+// TF_BUILTIN is a convenience macro that creates a new subclass of the given
+// assembler behind the scenes.
+TF_BUILTIN(MathIs42, MathBuiltinsAssembler) {
+  // Load the current function context (an implicit argument for every stub)
+  // and the X argument. Note that we can refer to parameters by the names
+  // defined in the builtin declaration.
+  Node* const context = Parameter(Descriptor::kContext);
+  Node* const x = Parameter(Descriptor::kX);
+
+  // At this point, x can be basically anything - a Smi, a HeapNumber,
+  // undefined, or any other arbitrary JS object. Let's call the ToNumber
+  // builtin to convert x to a number we can use.
+  // CallBuiltin can be used to conveniently call any CSA builtin.
+  Node* const number = CallBuiltin(Builtins::kToNumber, context, x);
+
+  // Create a CSA variable to store the resulting value. The type of the
+  // variable is kTagged since we will only be storing tagged pointers in it.
+  VARIABLE(var_result, MachineRepresentation::kTagged);
+
+  // We need to define a couple of labels which will be used as jump targets.
+  Label if_issmi(this), if_isheapnumber(this), out(this);
+
+  // ToNumber always returns a number. We need to distinguish between Smis
+  // and heap numbers - here, we check whether number is a Smi and conditionally
+  // jump to the corresponding labels.
+  Branch(TaggedIsSmi(number), &if_issmi, &if_isheapnumber);
+
+  // Binding a label begins generating code for it.
+  BIND(&if_issmi);
+  {
+    // SelectBooleanConstant returns the JS true/false values depending on
+    // whether the passed condition is true/false. The result is bound to our
+    // var_result variable, and we then unconditionally jump to the out label.
+    var_result.Bind(SelectBooleanConstant(SmiEqual(number, SmiConstant(42))));
+    Goto(&out);
+  }
+
+  BIND(&if_isheapnumber);
+  {
+    // ToNumber can only return either a Smi or a heap number. Just to make sure
+    // we add an assertion here that verifies number is actually a heap number.
+    CSA_ASSERT(this, IsHeapNumber(number));
+    // Heap numbers wrap a floating point value. We need to explicitly extract
+    // this value, perform a floating point comparison, and again bind
+    // var_result based on the outcome.
+    Node* const value = LoadHeapNumberValue(number);
+    Node* const is_42 = Float64Equal(value, Float64Constant(42));
+    var_result.Bind(SelectBooleanConstant(is_42));
+    Goto(&out);
+  }
+
+  BIND(&out);
+  {
+    Node* const result = var_result.value();
+    CSA_ASSERT(this, IsBoolean(result));
+    Return(result);
+  }
+}
+```
