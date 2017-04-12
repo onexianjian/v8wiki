@@ -14,7 +14,7 @@ The remaining document will focus on the latter and give a brief tutorial for de
 
 # CodeStubAssembler
 
-V8's CodeStubAssembler is a custom, platform agnostic assembler that provides low-level primitives as a thin abstraction over assembly, but also offers an extensive library of higher-level functionality. For example:
+V8's CodeStubAssembler is a custom, platform agnostic assembler that provides low-level primitives as a thin abstraction over assembly, but also offers an extensive library of higher-level functionality.
 
 ```
 // Low-level:
@@ -28,3 +28,15 @@ Node* value = Load(MachineType::IntPtr(), addr);
 Node* object = /* ... */;
 Node* string = ToString(context, object);
 ```
+
+CSA builtins run through part of the TurboFan compilation pipeline (including block scheduling and register allocation, but notably not through optimization passes) which then emits the final executable code.
+
+# Writing a CodeStubAssembler Builtin
+
+In this section, we will write a simple CSA builtin to calculate n'th number of the Fibonacci sequence. Since we want it to remain efficient, we will only handle Smi (V8's internal small integer type) arguments and result. The builtin will be exposed to JS by installing it on the Math object (because we can).
+
+This example demonstrates:
+* Creating CSA builtins of both JavaScript and stub linkage. The former can be called like a JS function, the latter is for efficient internal use.
+* Using CSA to implement simple logic: Smi arithmetic, conditionals, and calls.
+* Internal recursive calls to CSA builtins with stub linkage.
+* Installation of the CSA builtin with JS linkage on the Math object.
