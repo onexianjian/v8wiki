@@ -40,3 +40,6 @@ This example demonstrates:
 * Using CSA to implement simple logic: Smi arithmetic, conditionals, and calls.
 * Internal recursive calls to CSA builtins with stub linkage.
 * Installation of the CSA builtin with JS linkage on the Math object.
+
+In case you'd like to follow along locally, the following code is based off revision [7a8d20a7](https://chromium.googlesource.com/v8/v8/+/7a8d20a79f9d5ce6fe589477b09327f3e90bf0e0).
+
