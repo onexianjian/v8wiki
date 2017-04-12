@@ -8,4 +8,23 @@ V8's builtins can be implemented using a number of different methods (each with 
 * **Platform-dependent assembly language**: can be highly efficient, but need manual ports to all platforms and are difficult to maintain.
 * **C++**: very similar in style to runtime functions and have access to V8's powerful runtime functionality, but usually not suited to performance-sensitive areas.
 * **JavaScript**: concise and readable code, access to fast intrinsics, but frequent usage of slow runtime calls, subject to unpredictable performance through type pollution, and subtle issues around (complicated and non-obvious) JS semantics.
-* **CodeStubAssembler**: provides efficient low-level functionality that is very close to assembly language while remaining platform-independent and preserving readability. 
+* **CodeStubAssembler**: provides efficient low-level functionality that is very close to assembly language while remaining platform-independent and preserving readability.
+
+The remaining document will focus on the latter and give a brief tutorial for developing a simple CodeStubAssembler (CSA) builtin exposed to JavaScript.
+
+# CodeStubAssembler
+
+V8's CodeStubAssembler is a custom, platform agnostic assembler that provides low-level primitives as a thin abstraction over assembly, but also offers an extensive library of higher-level functionality. For example:
+
+```
+// Low-level:
+// Loads the pointer-sized data at addr into value.
+Node* addr = /* ... */;
+Node* value = Load(MachineType::IntPtr(), addr);
+
+// And high-level:
+// Performs the JS operation ToString(object).
+// ToString semantics are specified at https://tc39.github.io/ecma262/#sec-tostring. 
+Node* object = /* ... */;
+Node* string = ToString(context, object);
+```
