@@ -36,10 +36,26 @@ CSA builtins run through part of the TurboFan compilation pipeline (including bl
 In this section, we will write a simple CSA builtin to calculate n'th number of the Fibonacci sequence. Since we want it to remain efficient, we will only handle Smi (V8's internal small integer type) arguments and result. The builtin will be exposed to JS by installing it on the Math object (because we can).
 
 This example demonstrates:
-* Creating CSA builtins of both JavaScript and stub linkage. The former can be called like a JS function, the latter is for efficient internal use.
-* Using CSA to implement simple logic: Smi arithmetic, conditionals, and calls.
-* Internal recursive calls to CSA builtins with stub linkage.
-* Installation of the CSA builtin with JS linkage on the Math object.
+* Creating a CSA builtin with JavaScript linkage, which can be called like a JS function.
+* Using CSA to implement simple logic: Smi and heap-number handling, conditionals, and calls to TFS builtins.
+* Using CSA Variables.
+* Installation of the CSA builtin on the Math object.
 
 In case you'd like to follow along locally, the following code is based off revision [7a8d20a7](https://chromium.googlesource.com/v8/v8/+/7a8d20a79f9d5ce6fe589477b09327f3e90bf0e0).
 
+## Declaring a new CSA Builtin
+
+Builtins are declared in the `BUILTIN_LIST_BASE` macro in [src/builtins/builtins-definitions.h](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-definitions.h?q=builtins-definitions.h+package:%5Echromium$&l=1). To create a new CSA builtin with JS linkage and one parameter named 'X':
+
+```
+#define BUILTIN_LIST_BASE(CPP, API, TFJ, TFC, TFS, TFH, ASM, DBG)              \
+  // [... snip ...]
+  TFJ(MathIs42, 1, kX)                                                         \
+  // [... snip ...]
+```
+
+Note that `BUILTIN_LIST_BASE` takes several different macros that denote different builtin kinds (see inline documentation for more details). CSA builtins specifically are split into:
+* **TFJ**: JavaScript linkage.
+* **TFS**: Stub linkage.
+* **TFC**: Stub linkage builtin requiring a custom interface descriptor (e.g. if arguments are untagged or need to be passed in specific registers).
+* **TFH**: Specialized stub linkage builtin used for IC handlers.
