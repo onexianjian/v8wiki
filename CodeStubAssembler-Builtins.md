@@ -124,3 +124,15 @@ TF_BUILTIN(MathIs42, MathBuiltinsAssembler) {
   }
 }
 ```
+
+## Attaching Math.Is42
+
+Builtin objects such as `Math` are set up mostly in [src/bootstrapper.cc](https://cs.chromium.org/chromium/src/v8/src/bootstrapper.cc?q=src/bootstrapper.cc+package:%5Echromium$&l=1) (with some setup occurring in `.js` files). Attaching our new builtin is simple:
+
+```
+    // Existing code to set up Math, included here for clarity.
+    Handle<JSObject> math = factory->NewJSObject(cons, TENURED);
+    JSObject::AddProperty(global, name, math, DONT_ENUM);
+    // [... snip ...]
+    SimpleInstallFunction(math, "is42", Builtins::kMathIs42, 1, true);
+```
