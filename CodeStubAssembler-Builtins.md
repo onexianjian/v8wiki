@@ -33,7 +33,7 @@ CSA builtins run through part of the TurboFan compilation pipeline (including bl
 
 # Writing a CodeStubAssembler Builtin
 
-In this section, we will write a simple CSA builtin to calculate n'th number of the Fibonacci sequence. Since we want it to remain efficient, we will only handle Smi (V8's internal small integer type) arguments and result. The builtin will be exposed to JS by installing it on the Math object (because we can).
+In this section, we will write a simple CSA builtin that takes a single argument, and returns whether it represents the number `42`. The builtin will be exposed to JS by installing it on the Math object (because we can).
 
 This example demonstrates:
 * Creating a CSA builtin with JavaScript linkage, which can be called like a JS function.
