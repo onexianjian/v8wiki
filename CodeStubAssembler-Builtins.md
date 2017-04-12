@@ -16,7 +16,7 @@ The remaining document will focus on the latter and give a brief tutorial for de
 
 V8's CodeStubAssembler is a custom, platform agnostic assembler that provides low-level primitives as a thin abstraction over assembly, but also offers an extensive library of higher-level functionality.
 
-```
+```c++
 // Low-level:
 // Loads the pointer-sized data at addr into value.
 Node* addr = /* ... */;
@@ -47,7 +47,7 @@ In case you'd like to follow along locally, the following code is based off revi
 
 Builtins are declared in the `BUILTIN_LIST_BASE` macro in [src/builtins/builtins-definitions.h](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-definitions.h?q=builtins-definitions.h+package:%5Echromium$&l=1). To create a new CSA builtin with JS linkage and one parameter named 'X':
 
-```
+```c++
 #define BUILTIN_LIST_BASE(CPP, API, TFJ, TFC, TFS, TFH, ASM, DBG)              \
   // [... snip ...]
   TFJ(MathIs42, 1, kX)                                                         \
@@ -64,7 +64,7 @@ Note that `BUILTIN_LIST_BASE` takes several different macros that denote differe
 
 Builtin definitions are located in `src/builtins/builtins-*-gen.cc` files, roughly organized by topic. Since we will be writing a `Math` builtin, we'll put our definition into [src/builtins/builtins-math-gen.cc](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-math-gen.cc?q=builtins-math-gen.cc+package:%5Echromium$&l=1).
 
-```
+```c++
 // TF_BUILTIN is a convenience macro that creates a new subclass of the given
 // assembler behind the scenes.
 TF_BUILTIN(MathIs42, MathBuiltinsAssembler) {
@@ -129,10 +129,24 @@ TF_BUILTIN(MathIs42, MathBuiltinsAssembler) {
 
 Builtin objects such as `Math` are set up mostly in [src/bootstrapper.cc](https://cs.chromium.org/chromium/src/v8/src/bootstrapper.cc?q=src/bootstrapper.cc+package:%5Echromium$&l=1) (with some setup occurring in `.js` files). Attaching our new builtin is simple:
 
-```
+```c++
     // Existing code to set up Math, included here for clarity.
     Handle<JSObject> math = factory->NewJSObject(cons, TENURED);
     JSObject::AddProperty(global, name, math, DONT_ENUM);
     // [... snip ...]
     SimpleInstallFunction(math, "is42", Builtins::kMathIs42, 1, true);
+```
+
+Now that Is42 is attached, it can actually be called from JS:
+
+```
+$ out/debug/d8
+d8> Math.is42(42)
+true
+d8> Math.is42("42.0")
+true
+d8> Math.is42(true)
+false
+d8> Math.is42({ valueOf: () => 42 })
+true
 ```
