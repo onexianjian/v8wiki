@@ -150,3 +150,50 @@ false
 d8> Math.is42({ valueOf: () => 42 })
 true
 ```
+
+## Defining and calling a builtin with stub linkage
+
+CSA builtins can also be created with stub linkage (instead of JS linkage as we used above in `MathIs42`). Such builtins can be useful to extract commonly-used code into a separate code object that can be used by multiple callers, while the code is only produced once. Let's extract the code that handles heap numbers into a separate builtin called `MathIsHeapNumber42`, and call it from `MathIs42`.
+
+Defining and using TFS stubs is easy; declaration are again placed in [src/builtins/builtins-definitions.h](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-definitions.h?q=builtins-definitions.h+package:%5Echromium$&l=1):
+
+```C++
+#define BUILTIN_LIST_BASE(CPP, API, TFJ, TFC, TFS, TFH, ASM, DBG)              \
+  // [... snip ...]
+  TFS(MathIsHeapNumber42, kX)                                                  \
+  TFJ(MathIs42, 1, kX)                                                         \
+  // [... snip ...]
+```
+
+Note that currently, order within `BUILTIN_LIST_BASE` does matter. `MathIs42` calls `MathIsHeapNumber42`, the former needs to be listed after the latter (this requirement should be lifted at some point).
+
+The definition is also straightforward. In [src/builtins/builtins-math-gen.cc](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-math-gen.cc?q=builtins-math-gen.cc+package:%5Echromium$&l=1):
+
+```C++
+// Defining a TFS builtin works exactly the same way as TFJ builtins.
+TF_BUILTIN(MathIsHeapNumber42, MathBuiltinsAssembler) {
+  Node* const x = Parameter(Descriptor::kX);
+  CSA_ASSERT(this, IsHeapNumber(x));
+  Node* const value = LoadHeapNumberValue(x);
+  Node* const is_42 = Float64Equal(value, Float64Constant(42));
+  Return(SelectBooleanConstant(is_42));
+}
+```
+
+Finally, let's call our new builtin from `MathIs42`:
+
+```C++
+TF_BUILTIN(MathIs42, MathBuiltinsAssembler) {
+  // [... snip ...]
+  BIND(&if_isheapnumber);
+  {
+    // Instead of handling heap numbers inline, we now call into our new TFS stub.
+    var_result.Bind(CallBuiltin(Builtins::kMathIsHeapNumber42, context, number));
+    Goto(&out);
+  }
+  // [... snip ...]
+```
+
+Why should you care about TFS builtins at all? Why not leave the code inline (or extracted into a helper method for better readability)?
+
+One reason is code space - builtins are generated at compile-time and included in the V8 snapshot, thus unconditionally taking up (significant) space in every created isolate. Extracting large chunks of commonly used code to TFS builtins can quickly lead to space savings in the 10s to 100s of KB's.
