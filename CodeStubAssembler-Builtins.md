@@ -165,7 +165,7 @@ Defining and using TFS stubs is easy; declaration are again placed in [src/built
   // [... snip ...]
 ```
 
-Note that currently, order within `BUILTIN_LIST_BASE` does matter. `MathIs42` calls `MathIsHeapNumber42`, the former needs to be listed after the latter (this requirement should be lifted at some point).
+Note that currently, order within `BUILTIN_LIST_BASE` does matter. Since `MathIs42` calls `MathIsHeapNumber42`, the former needs to be listed after the latter (this requirement should be lifted at some point).
 
 The definition is also straightforward. In [src/builtins/builtins-math-gen.cc](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-math-gen.cc?q=builtins-math-gen.cc+package:%5Echromium$&l=1):
 
