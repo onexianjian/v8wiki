@@ -197,4 +197,4 @@ TF_BUILTIN(MathIs42, MathBuiltinsAssembler) {
 
 Why should you care about TFS builtins at all? Why not leave the code inline (or extracted into a helper method for better readability)?
 
-One reason is code space - builtins are generated at compile-time and included in the V8 snapshot, thus unconditionally taking up (significant) space in every created isolate. Extracting large chunks of commonly used code to TFS builtins can quickly lead to space savings in the 10s to 100s of KB's.
+An important reason is code space - builtins are generated at compile-time and included in the V8 snapshot, thus unconditionally taking up (significant) space in every created isolate. Extracting large chunks of commonly used code to TFS builtins can quickly lead to space savings in the 10s to 100s of KB's.
