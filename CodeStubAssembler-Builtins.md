@@ -192,6 +192,7 @@ TF_BUILTIN(MathIs42, MathBuiltinsAssembler) {
     Goto(&out);
   }
   // [... snip ...]
+}
 ```
 
 Why should you care about TFS builtins at all? Why not leave the code inline (or extracted into a helper method for better readability)?
