@@ -8,7 +8,7 @@ If you get an email, that the [Node integration build](https://build.chromium.or
 # Reproduce locally 
 Clone V8’s Node repository and check out the lkgr branch. 
 ```
-git clone git@github.com:v8/node.git
+git clone https://github.com/v8/node.git
 ```
 
 If you already have a Node checkout, add v8/node as remote.
