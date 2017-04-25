@@ -11,15 +11,13 @@ following categories:
   * Stability: `status=available,untriaged component:Blink>JavaScript label:Stability -label:Clusterfuzz`
     * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=status%3Davailable%2Cuntriaged+component%3ABlink%3EJavaScript+label%3AStability+-label%3AClusterfuzz&colspec=ID+Pri+M+Stars+ReleaseBlock+Component+Status+Owner+Summary+OS+Modified&x=m&y=releaseblock&cells=ids) query
     * No CC needed, will be triaged by a sheriff automatically
-  * Performance: hablich@c....org, mvstaton@c....org
+  * Performance: mvstaton@c....org
   * Clusterfuzz: Set the bug to the following state:
     * `label:ClusterFuzz component:Blink>JavaScript status:Untriaged`
     * Will show up in [this](https://bugs.chromium.org/p/chromium/issues/list?can=2&q=label%3AClusterFuzz+component%3ABlink%3EJavaScript+status%3AUntriaged&colspec=ID+Pri+M+Stars+ReleaseBlock+Component+Status+Owner+Summary+OS+Modified&x=m&y=releaseblock&cells=ids) query.
     * No CC needed, will be triaged by a sheriff automatically
 
 If you need the attention of a sheriff, please consult the rotation information.
-
-Assign remaining issues to hablich@c....org.
 
 Use the component `Blink>JavaScript` on all issues.
 
