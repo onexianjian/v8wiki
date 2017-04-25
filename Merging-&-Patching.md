@@ -17,7 +17,7 @@ You can use [a template](https://code.google.com/p/v8/issues/entry?template=Merg
 * The patch does not alter APIs
 * The patch does not change behavior present before branch cut (except the behavior change fixes a bug)
 
-More information can be found on the [relevant Chromium page](https://www.chromium.org/developers/the-zen-of-merge-requests). When in doubt, send an email to hablich@chromium.org.
+More information can be found on the [relevant Chromium page](https://www.chromium.org/developers/the-zen-of-merge-requests). When in doubt, send an email to v8-dev@googlegroups.com.
 
 # Merge process outlined
 
