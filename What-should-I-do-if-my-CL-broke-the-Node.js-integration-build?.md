@@ -34,6 +34,8 @@ For debug builds, set v8_optimized_debug in common.gypi to true and run
 ./configure --debug && make -j48 test
 ```
 
+To run the debug binary, run `./node_g` rather than `./node`
+
 # Make changes to Node.js
 If you need to change something in [Node](https://github.com/v8/node/) so your CL doesn’t break the [build](https://build.chromium.org/p/client.v8.fyi/builders/V8%20-%20node.js%20integration) anymore, do the following. **You need a GitHub account for this**. 
 
