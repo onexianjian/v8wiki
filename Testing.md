@@ -67,6 +67,23 @@ tools/run-tests.py --progress=verbose --outdir=out --arch=ia32 --mode=release we
 
 Replace --arch and other parameters with values that match your build options.
 
+## Running Microbenchmarks
+
+Under `test/js-perf-test` we have microbenchmarks to track feature performance. There is a special runner for these, `tools/run_perf.py`. Run them like:
+```
+  python -u tools/run_perf.py --arch x64 
+      --binary-override-path ~/v8/out.gn/x64.release/d8 
+      test/js-perf-test/JSTests.json
+```
+
+If you don't want to run all the JSTests, you can provide a filter argument:
+```
+  python -u tools/run_perf.py --arch x64 
+      --binary-override-path ~/v8/out.gn/x64.release/d8 
+      --filter JSTests/TypedArrays/ 
+      test/js-perf-test/JSTests.json
+```
+
 ## Updating the bytecode expectations
 
 Sometimes the bytecode expectations may change resulting in cctest failures. To update the golden files, build `test/cctest/generate-bytecode-expectations` by running:
