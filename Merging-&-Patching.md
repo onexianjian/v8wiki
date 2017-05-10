@@ -63,6 +63,27 @@ tools/release/merge_to_branch.py --branch 2.4 af3cf11 cf33f1b sf3cf09
 
 If one of the builders is not green after handling your patch, revert the merge immediately. A bot (AutoTagBot) will take care of the correct versioning after a 10 minute wait.
 
+# Patching a version used on Canary/Dev
+
+In case you need to patch a Canary/Dev version, which should not happen often
+follow these instructions:
+
+## Step 1: Merge to roll branch
+Example version used is 2.4.4.
+
+    tools/release/roll_merge.py --branch 5.7.433 af3cf11
+
+## Step 2: Make Chromium aware of the fix
+Example Chromium branch used is 2978
+
+    $ git checkout chromium/2978
+    $ git merge 5.7.433.1
+    $ git push
+
+## Step 3: The end
+
+Chrome/Chromium should should pick of the change when they build automatically.
+
 # FAQ
 
 ## I get an error during merge that is related to tagging. What should I do?
