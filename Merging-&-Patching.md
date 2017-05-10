@@ -2,7 +2,7 @@
 
 If you have a patch to the master branch (e.g. an important bug fix) that needs to be merged into one of the production V8 branches, read on.
 
-For the examples, a branched 2.4 version of V8 will be used. Substitute "2.4" with your version number. See [Release Process](Release Process) for more information about version numbers.
+For the examples, a branched 2.4 version of V8 will be used. Substitute "2.4" with your version number. See [[Release Process|Release Process]] for more information about version numbers.
 
 **An associated issue on Chromium's or V8's issue tracker is mandatory if a patch is merged. This helps with keeping track of merges.
 You can use [a template](https://code.google.com/p/v8/issues/entry?template=Merge%20request) to create an issue.**
@@ -15,7 +15,7 @@ You can use [a template](https://code.google.com/p/v8/issues/entry?template=Merg
    1. Correctness bug
    1. Performance bug
 * The patch does not alter APIs
-* The patch does not change behavior present before branch cut (except the behavior change fixes a bug)
+* The patch does not change behavior present before branch cut (except if the behavior change fixes a bug)
 
 More information can be found on the [relevant Chromium page](https://www.chromium.org/developers/the-zen-of-merge-requests). When in doubt, send an email to v8-dev@googlegroups.com.
 
@@ -27,10 +27,10 @@ Merge-[Status]-[Branch]
 ```
 The currently important labels for V8 are:
 
-  1. Merge-Request-$BRANCHNUMBER$ initiates the process => This fix should be merged into #.#
-  1. Merge-Review-$BRANCHNUMBER$ The merge is not approved yet for #.# e.g. because Canary coverage is missing
-  1. Merge-Approved-$BRANCHNUMBER$ => Simply means that the Chrome TPM are signing the merge off
-  1. Merge-Merged-$BRANCHNUMBER$ => When the merge is done the Merge-Approved label is swapped with this one. $BRANCHNUMBER$ is the name/number of the V8 branch e.g. 4.3 for M-43.
+  1. Merge-Request-{Branch} initiates the process => This fix should be merged into #.#
+  1. Merge-Review-{Branch} The merge is not approved yet for #.# e.g. because Canary coverage is missing
+  1. Merge-Approved-{Branch} => Simply means that the Chrome TPMs have signed off on the merge
+  1. Merge-Merged-{Branch} => When the merge is done, the Merge-Approved label is swapped with this one. {Branch} is the name/number of the V8 branch e.g. 4.3 for M-43.
 
 # Instructions for git using the automated script
 
@@ -42,7 +42,7 @@ Use mergeinfo.py to get all the commits which are connected to the HASH accordin
 tools/release/mergeinfo.py HASH
 ```
 
-If it tells you ```Is on Canary: No Canary coverage``` you should not merge yet because the fix was not yet deployed on a Canary build. A good rule of the thump is to wait at least 3 days after the fix landed until the merge is conducted.
+If it tells you ```Is on Canary: No Canary coverage``` you should not merge yet because the fix was not yet deployed on a Canary build. A good rule of the thumb is to wait at least 3 days after the fix has landed until the merge is conducted.
 
 ## Step 1: Run the script
 
@@ -59,17 +59,17 @@ You can also merge more than one revision at once, just list them all.
 tools/release/merge_to_branch.py --branch 2.4 af3cf11 cf33f1b sf3cf09
 ```
 
-## Step 2: Observe the [branch waterfall] (https://build.chromium.org/p/client.v8.branches/console)
+## Step 2: Observe the [branch waterfall](https://build.chromium.org/p/client.v8.branches/console)
 
-If one of the builders is not green after handling your patch, revert the merge immediately. A bot (AutoTagBot) will take care of the correct versioning after a 10 minutes wait time.
+If one of the builders is not green after handling your patch, revert the merge immediately. A bot (AutoTagBot) will take care of the correct versioning after a 10 minute wait.
 
 # FAQ
 
 ## I get an error during merge that is related to tagging. What should I do?
 When two people are merging at the same time a race-condition can happen in the merge scripts. If this is the case, contact machenbach@chromium.org and hablich@chromium.org.
-## Is there a TL;DR;?
+## Is there a TL;DR?
   1. [Create issue on issue tracker](https://code.google.com/p/v8/issues/entry?template=Merge%20request)
   1. Check status of the fix with ```tools/release/mergeinfo.py```
   1. Add Merge-Request-{Branch} to the issue
-  1. Wait until somebody will add Merge-Approved-{Branch}
+  1. Wait until somebody adds Merge-Approved-{Branch}
   1. Merge
