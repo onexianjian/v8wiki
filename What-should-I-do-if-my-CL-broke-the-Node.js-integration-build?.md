@@ -1,7 +1,7 @@
 ## Background
 For stability reasons, [Node master](https://github.com/nodejs/node) uses a V8 branch, that is at stable or older. For additional integration, the V8 team [builds](https://build.chromium.org/p/client.v8.fyi/builders/V8%20-%20node.js%20integration) Node with [V8 master](https://chromium.googlesource.com/v8/v8.git), i.e., with a V8 version that is several weeks newer than the V8 version in the official [Node master](https://github.com/nodejs/node). 
 
-If the Node integration bot [Node integration build](https://build.chromium.org/p/client.v8.fyi/builders/V8%20-%20node.js%20integration) fails on our CQ, there is either a legitimate problem with your CL (you should revert the CL and fix it) or [Node](https://github.com/v8/node/) must be modified. If the tests failed, search for "Not OK" in the logfiles. **This document describes how to reproduce the problem locally and how to make changes to [V8’s Node fork](https://github.com/v8/node/) if your V8 CL causes the build to fail.**
+If the [`v8_node_linux64_rel` bot](https://build.chromium.org/p/client.v8.fyi/builders/V8%20-%20node.js%20integration) fails on our CQ, there is either a legitimate problem with your CL (you should revert the CL and fix it) or [Node](https://github.com/v8/node/) must be modified. If the tests failed, search for "Not OK" in the logfiles. **This document describes how to reproduce the problem locally and how to make changes to [V8’s Node fork](https://github.com/v8/node/) if your V8 CL causes the build to fail.**
 
 *Note: Patches in V8’s fork are usually cherry-picked by the person who updates V8 in [Node](https://github.com/nodejs/node) (usually several weeks or month later). If you merged a fix to V8’s Node fork, there’s nothing else you need to do.*
 
