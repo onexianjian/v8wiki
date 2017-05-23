@@ -78,4 +78,4 @@ Build and run the tests again. Double check that your formatting looks like the 
 make lint
 git push origin fix-something
 ```
-Once you have pushed the fixes to your repository, open a Pull Request on GitHub. This will send an email to the [V8 node-js team](https://github.com/orgs/v8/teams/node-js). They will review and merge your PR. If you have specific questions, ping the [V8 node-js team](https://github.com/orgs/v8/teams/node-js) maintainers.
+Once you have pushed the fixes to your repository, open a Pull Request on GitHub. This will send an email to the [V8 node-js team](https://github.com/orgs/v8/teams/node-js). They will review and merge your PR. Once the PR is merged, you can run the CQ for your V8 commit again and land it. If you have specific questions, ping the [V8 node-js team](https://github.com/orgs/v8/teams/node-js) maintainers.
