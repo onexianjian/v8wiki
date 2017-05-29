@@ -29,6 +29,8 @@ gclient
 Then get V8, including all branches and dependencies:
 
 ```
+mkdir ~/v8
+cd ~/v8
 fetch v8
 cd v8
 ```
