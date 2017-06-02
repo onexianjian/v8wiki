@@ -9,9 +9,10 @@ If the [`v8_node_linux64_rel` bot](https://build.chromium.org/p/client.v8.fyi/bu
 Clone V8’s Node repository and check out the lkgr branch. 
 ```
 git clone https://github.com/v8/node.git
+git checkout -b vee-eight-lkgr origin/vee-eight-lkgr
 ```
 
-If you already have a Node checkout, add v8/node as remote.
+Or, if you already have a Node checkout, add v8/node as remote.
 
 ```
 cd $NODE
