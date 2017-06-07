@@ -1,7 +1,6 @@
 * [What is V8?](Home)
 * [Introduction](Introduction)
 * [Building from Source (Start here)](Building-from-Source)
-
    * [Checking out source](Checking-out-source)
    * [Using Git](Using-Git)
    * [Building with GN](Building-with-GN)
@@ -46,8 +45,10 @@
       * [Built-in functions](Built-in-functions)
       * [i18n support](i18n-support)
       * [[External] V8 API](http://v8.paulfryzel.com/docs/master/index.html)
+      * [Version numbering scheme](Version-numbering-scheme)
    * Under the Hood
       * [Design Elements](Design-Elements)
       * [Interpreter](Interpreter)
       * [TurboFan](TurboFan)
       * [CodeStubAssembler Builtins](CodeStubAssembler-Builtins)
+
