@@ -45,16 +45,16 @@ Anyone who wants to implement a feature in V8 must contact [v8-users@googlegroup
 - Clarify the feature status with regard to the criteria in the guidelines on this page (TC39 acceptance, interest from browser vendors, testing plans) in an intent-to-implement e-mail.
 - Provide a design doc to clarify V8 code base impact.
 - The implementation should also consider DevTools support.
-- Implement the feature under V8 "--harmony-X" flag.
+- Implement the feature under a `--harmony-X` flag.
 - Develop conformance and performance tests in parallel.
 
 ## Staging
 
-At this stage, the feature becomes available in V8 under “--es-staging” flag. The criteria for moving a feature to that stage are:
+At this stage, the feature becomes available in V8 under the `--es-staging` flag. The criteria for moving a feature to that stage are:
 
 - The specification of the feature is stable
-- One example of feature stability indicator is it being advanced to stage 3 of the [TC39 process](https://docs.google.com/a/chromium.org/document/d/1QbEE0BsO4lvl7NFTn5WXWeiEIBfaVUF7Dk0hpPpPDzU/)
-- Implementation is mostly complete; remaining issues are identified and documented.
+    - One example of feature stability indicator is it being advanced to stage 3 of [the TC39 process](https://tc39.github.io/process-document/)
+- Implementation is mostly complete; remaining issues are identified and documented
 - Conformance tests are in place
 - Performance regression tests are in place
 
