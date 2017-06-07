@@ -20,7 +20,7 @@ To find out what version this is,
 2. Find the latest stable Chrome version in the table
 3. Check the `v8_version` column (to the right) on the same row
 
-_Example: at the time of this writing, the site indicates that for `mac`/`stable`, the Chrome release version is 59.0.3071.86, which corresponds to V8 version 5.9.211.31.
+_Example: at the time of this writing, the site indicates that for `mac`/`stable`, the Chrome release version is 59.0.3071.86, which corresponds to V8 version 5.9.211.31._
 
 ### Finding the head of the corresponding branch
 
