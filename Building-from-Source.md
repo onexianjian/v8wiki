@@ -1,45 +1,54 @@
 In order to be able to build V8 from scratch **on Linux/Mac for x64** please heed the following steps:
 
-# Getting the V8 source TL;DR;
+## Getting the V8 source TL;DR
+
 More in-depth information can be found [here](https://github.com/v8/v8/wiki/Checking%20out%20source).
 
-1.) [Install Git](https://github.com/v8/v8/wiki/Using%20Git#prerequisites)
+1. [Install Git](https://github.com/v8/v8/wiki/Using%20Git#prerequisites)
 
-2.) [Install depot_tools](https://www.chromium.org/developers/how-tos/install-depot-tools)
+2. [Install `depot_tools`](https://www.chromium.org/developers/how-tos/install-depot-tools)
 
-3.) Update depot_tools by executing the following into your terminal/shell:
-```
-gclient
-```
-4.) Go into the directory where you want to download the V8 source into and execute the following in your terminal/shell:
-```
-fetch v8
-cd v8
-```
-**Don't simply git-clone the V8 repository!**
+3. Update `depot_tools` by executing the following into your terminal/shell:
 
-# Building V8 TL;DR;
-More in-depth information can be found in the [here](https://github.com/v8/v8/wiki/Building%20with%20GN).
+    ```sh
+    gclient
+    ```
 
-5.) Make sure that you are in the V8 source directory. If you followed every step up until step 4.) you already should be at the right location.
+4. Go into the directory where you want to download the V8 source into and execute the following in your terminal/shell:
 
-6.) Download all the build dependencies by executing the following in your terminal/shell:
-```
-gclient sync
-```
+    ```sh
+    fetch v8
+    cd v8
+    ```
 
-7.) Generate the necessary build files by executing the following in your terminal/shell:
-```
-tools/dev/v8gen.py x64.release
-```
+**Don’t simply `git clone` the V8 repository!**
 
-8.) Compile the source by executing the following in your terminal/shell:
-```
-ninja -C out.gn/x64.release
-```
+## Building V8 TL;DR
 
-9.) Run the tests by executing the following in your terminal/shell:
-```
-tools/run-tests.py --gn
-```
+More in-depth information can be found [here](https://github.com/v8/v8/wiki/Building%20with%20GN).
 
+1. Make sure that you are in the V8 source directory. If you followed every step up until step 4 above, you’re already at the right location.
+
+2. Download all the build dependencies by executing the following in your terminal/shell:
+
+    ```sh
+    gclient sync
+    ```
+
+7. Generate the necessary build files by executing the following in your terminal/shell:
+
+    ```sh
+    tools/dev/v8gen.py x64.release
+    ```
+
+8. Compile the source by executing the following in your terminal/shell:
+
+    ```sh
+    ninja -C out.gn/x64.release
+    ```
+
+9. Run the tests by executing the following in your terminal/shell:
+
+    ```sh
+    tools/run-tests.py --gn
+    ```
