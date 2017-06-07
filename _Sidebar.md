@@ -42,10 +42,10 @@
       * [Getting Started](Getting-Started-with-Embedding)
       * [Example code](Example-code)
       * [Embedder's Guide](Embedder's-Guide)
+      * [Version numbers](Version-numbers)
       * [Built-in functions](Built-in-functions)
       * [i18n support](i18n-support)
       * [[External] V8 API](http://v8.paulfryzel.com/docs/master/index.html)
-      * [Version numbering scheme](Version-numbering-scheme)
    * Under the Hood
       * [Design Elements](Design-Elements)
       * [Interpreter](Interpreter)
