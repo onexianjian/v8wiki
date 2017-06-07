@@ -1,13 +1,13 @@
-The V8 project aims to develop a high-performance, standards-compliant ECMAScript/JavaScript implementation. This document outlines our guidelines for "language-facing" changes and the process through which they are enforced.
+The V8 project aims to develop a high-performance, standards-compliant ECMAScript/JavaScript implementation. This document outlines our guidelines for “language-facing” changes and the process through which they are enforced.
 
 # Guidelines
 
-We strive to be responsible stewards of JavaScript language, balancing interoperability and innovation. Our guidelines align closely with those of [Blink project](http://www.chromium.org/blink#new-features). Keep in mind that these are directional beacons, not bright-line rules.
+We strive to be responsible stewards of JavaScript language, balancing interoperability and innovation. Our guidelines align closely with those of [Blink project](https://www.chromium.org/blink#new-features). Keep in mind that these are directional beacons, not bright-line rules.
 
 ## Compatibility Risk
 
 Factors that reduce compatibility risk include:
-- **Acceptance at TC39 committee**. TC39 is a primary steward of JavaScript language. We track progress of language features through the [TC-39 Process](https://docs.google.com/a/chromium.org/document/d/1QbEE0BsO4lvl7NFTn5WXWeiEIBfaVUF7Dk0hpPpPDzU/) and consider features that reach higher stages more stable and ready for implementation. The V8 team is actively involved in the TC39 committee and champions new features when appropriate.
+- **Acceptance at TC39 committee**. TC39 is a primary steward of JavaScript language. We track progress of language features through [the TC39 process](https://tc39.github.io/process-document/) and consider features that reach higher stages more stable and ready for implementation. The V8 team is actively involved in the TC39 committee and champions new features when appropriate.
 - **Interest from other browser vendors**. Implementations in other browsers are a clear signal of feature usefulness. In order of strength, this includes:
   1. compatible implementation in more than one engine
   2. compatible implementation in one engine
@@ -36,7 +36,7 @@ As the implementation of a particular feature progresses, we expect both conform
 
 # Process
 
-Language features implemented in V8 go over 3 stages: experimental implementation, staging, and shipping without a flag.
+Language features implemented in V8 go over three stages: experimental implementation, staging, and shipping without a flag.
 
 ## Experimental implementation
 
@@ -60,15 +60,15 @@ At this stage, the feature becomes available in V8 under “--es-staging” flag
 
 ## Turning the flag on - shipping feature to the open Web
 
-As the implementation of a feature progresses, we will evaluate community feedback on feature design and implementation. V8 team will make a decision to turn the feature on by default based on community opinion of the feature and technical maturity of implementation.
+As the implementation of a feature progresses, we evaluate community feedback on feature design and implementation. The V8 team makes a decision to turn the feature on by default based on the community opinion of the feature and the technical maturity of the implementation.
 
-Some community signals we will consider before shipment:
+Some community signals we consider before shipping:
 
-- **The feature is on the clear track to standardization at TC39**. For example, a feature spec is available and has been through several rounds of reviews, or a feature is at Stage 4 of TC39 Process.
-- **There is a clear interest in the feature from other browser vendors.** For example, another engine is shipping compatible implementation in experimental or stable channel.
+- **The feature is on the clear track to standardization at TC39**. For example, a feature spec is available and has been through several rounds of reviews, or a feature is at Stage 3+ of the TC39 process.
+- **There is a clear interest in the feature from other browser vendors.** For example, another engine is shipping a compatible implementation in an experimental or stable channel.
 
 The following technical criteria must be met for shipping:
 
-1. Implementation is complete; feedback received from staged implementation is addressed.
-2. No technical debt: V8 team is satisfied with the feature’s implementation quality (including basic DevTools support)
+1. The implementation is complete; any feedback received from the staged implementation is addressed.
+2. No technical debt: the V8 team is satisfied with the feature’s implementation quality (including basic DevTools support).
 3. **Performance** is consistent with our high-performance goals.
