@@ -27,27 +27,29 @@ More in-depth information can be found [here](https://github.com/v8/v8/wiki/Chec
 
 More in-depth information can be found [here](https://github.com/v8/v8/wiki/Building%20with%20GN).
 
-1. Make sure that you are in the V8 source directory. If you followed every step up until step 4 above, you’re already at the right location.
+1. For macOS: install Xcode and accept its license agreement. (If you’ve installed the command-line tools separately, [remove them first](https://bugs.chromium.org/p/chromium/issues/detail?id=729990#c1).)
 
-2. Download all the build dependencies by executing the following in your terminal/shell:
+2. Make sure that you are in the V8 source directory. If you followed every step up until step 4 above, you’re already at the right location.
+
+3. Download all the build dependencies by executing the following in your terminal/shell:
 
     ```sh
     gclient sync
     ```
 
-7. Generate the necessary build files by executing the following in your terminal/shell:
+4. Generate the necessary build files by executing the following in your terminal/shell:
 
     ```sh
     tools/dev/v8gen.py x64.release
     ```
 
-8. Compile the source by executing the following in your terminal/shell:
+5. Compile the source by executing the following in your terminal/shell:
 
     ```sh
     ninja -C out.gn/x64.release
     ```
 
-9. Run the tests by executing the following in your terminal/shell:
+6. Run the tests by executing the following in your terminal/shell:
 
     ```sh
     tools/run-tests.py --gn
