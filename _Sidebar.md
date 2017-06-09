@@ -41,7 +41,7 @@
    * Embedding V8
       * [Getting started](Getting-Started-with-Embedding)
       * [Example code](Example-code)
-      * [Embedder’s Guide](Embedder's-Guide)
+      * [Embedder’s guide](Embedder's-Guide)
       * [Version numbers](Version-numbers)
       * [Built-in functions](Built-in-functions)
       * [i18n support](i18n-support)
