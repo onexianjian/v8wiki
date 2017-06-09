@@ -2,7 +2,7 @@ Here you will find information that you'll need to be able to contribute to V8. 
 
 # Get the code
 
-See [Checking out source](Checking out source).
+See [Checking out source](https://github.com/v8/v8/wiki/Checking-out-source).
 
 # Before you contribute
 
