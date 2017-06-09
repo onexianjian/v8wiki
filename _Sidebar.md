@@ -15,7 +15,7 @@
    * [Feature launch process](Feature-Launch-Process)
    * [Merging & patching](Merging-&-Patching)
    * [Triaging issues](Triaging-issues)
-   * [C++ style guide](Cpp-Style-Guide)
+   * [C++ style guide](Cpp-style-guide)
    * [Becoming a committer](Becoming-a-committer)
    * [Handling of ports](Handling-of-Ports)
    * [Reporting security bugs](Reporting-security-bugs)
