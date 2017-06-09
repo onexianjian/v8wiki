@@ -56,3 +56,5 @@ We often backmerge important bug fixes to a stable branch, so if you care about 
 As soon as a new branch is promoted to Stable, we stop maintaining the previous stable branch. This happens every six weeks, so you should be prepared to update at least this often.
 
 Example: The current stable Chrome release is [44.0.2403.125](https://omahaproxy.appspot.com), with V8 4.4.63.25. So you should embed [branch-heads/4.4](https://chromium.googlesource.com/v8/v8.git/+/branch-heads/4.4). And you should update to branch-heads/4.5 when Chrome 45 is released on the Stable channel.
+
+**Related:** [Which V8 version should I use?](https://github.com/v8/v8/wiki/Version-numbers#which-v8-version-should-i-use)
