@@ -14,7 +14,8 @@ remotes/origin/4.5.35
 ```
 
 # Dev releases
-Every week a new Dev build is pushed to the users via [Chrome's Dev channel](https://www.google.com/chrome/browser/desktop/index.html?extra=devchannel&platform=win64). Normally the deliverable includes the latest stable enough V8 version on the Canary channel.
+
+Every week a new Dev build is pushed to the users via [Chrome’s Dev channel](https://www.google.com/chrome/browser/desktop/index.html?extra=devchannel&platform=win64). Normally the deliverable includes the latest stable enough V8 version on the Canary channel.
 
 Branches for a Dev normally look like this
 
