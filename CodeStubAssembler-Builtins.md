@@ -4,9 +4,9 @@ This document is intended as an introduction to writing CodeStubAssembler builti
 
 In V8, builtins can be seen as chunks of code that are executable by the VM at runtime. A common use case is to implement the functions of builtin objects (such as RegExp or Promise), but builtins can also be used to provide other internal functionality (e.g. as part of the IC system).
 
-V8's builtins can be implemented using a number of different methods (each with different trade-offs):
+V8’s builtins can be implemented using a number of different methods (each with different trade-offs):
 * **Platform-dependent assembly language**: can be highly efficient, but need manual ports to all platforms and are difficult to maintain.
-* **C++**: very similar in style to runtime functions and have access to V8's powerful runtime functionality, but usually not suited to performance-sensitive areas.
+* **C++**: very similar in style to runtime functions and have access to V8’s powerful runtime functionality, but usually not suited to performance-sensitive areas.
 * **JavaScript**: concise and readable code, access to fast intrinsics, but frequent usage of slow runtime calls, subject to unpredictable performance through type pollution, and subtle issues around (complicated and non-obvious) JS semantics.
 * **CodeStubAssembler**: provides efficient low-level functionality that is very close to assembly language while remaining platform-independent and preserving readability.
 
@@ -39,13 +39,13 @@ This example demonstrates:
 * Creating a CSA builtin with JavaScript linkage, which can be called like a JS function.
 * Using CSA to implement simple logic: Smi and heap-number handling, conditionals, and calls to TFS builtins.
 * Using CSA Variables.
-* Installation of the CSA builtin on the Math object.
+* Installation of the CSA builtin on the `Math` object.
 
-In case you'd like to follow along locally, the following code is based off revision [7a8d20a7](https://chromium.googlesource.com/v8/v8/+/7a8d20a79f9d5ce6fe589477b09327f3e90bf0e0).
+In case you’d like to follow along locally, the following code is based off revision [7a8d20a7](https://chromium.googlesource.com/v8/v8/+/7a8d20a79f9d5ce6fe589477b09327f3e90bf0e0).
 
 ## Declaring MathIs42
 
-Builtins are declared in the `BUILTIN_LIST_BASE` macro in [src/builtins/builtins-definitions.h](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-definitions.h?q=builtins-definitions.h+package:%5Echromium$&l=1). To create a new CSA builtin with JS linkage and one parameter named 'X':
+Builtins are declared in the `BUILTIN_LIST_BASE` macro in [`src/builtins/builtins-definitions.h`](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-definitions.h?q=builtins-definitions.h+package:%5Echromium$&l=1). To create a new CSA builtin with JS linkage and one parameter named `X`’:
 
 ```c++
 #define BUILTIN_LIST_BASE(CPP, API, TFJ, TFC, TFS, TFH, ASM, DBG)              \
@@ -62,7 +62,7 @@ Note that `BUILTIN_LIST_BASE` takes several different macros that denote differe
 
 ## Defining MathIs42
 
-Builtin definitions are located in `src/builtins/builtins-*-gen.cc` files, roughly organized by topic. Since we will be writing a `Math` builtin, we'll put our definition into [src/builtins/builtins-math-gen.cc](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-math-gen.cc?q=builtins-math-gen.cc+package:%5Echromium$&l=1).
+Builtin definitions are located in `src/builtins/builtins-*-gen.cc` files, roughly organized by topic. Since we will be writing a `Math` builtin, we’ll put our definition into [src/builtins/builtins-math-gen.cc](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-math-gen.cc?q=builtins-math-gen.cc+package:%5Echromium$&l=1).
 
 ```c++
 // TF_BUILTIN is a convenience macro that creates a new subclass of the given
@@ -75,7 +75,7 @@ TF_BUILTIN(MathIs42, MathBuiltinsAssembler) {
   Node* const x = Parameter(Descriptor::kX);
 
   // At this point, x can be basically anything - a Smi, a HeapNumber,
-  // undefined, or any other arbitrary JS object. Let's call the ToNumber
+  // undefined, or any other arbitrary JS object. Let’s call the ToNumber
   // builtin to convert x to a number we can use.
   // CallBuiltin can be used to conveniently call any CSA builtin.
   Node* const number = CallBuiltin(Builtins::kToNumber, context, x);
@@ -153,9 +153,9 @@ true
 
 ## Defining and calling a builtin with stub linkage
 
-CSA builtins can also be created with stub linkage (instead of JS linkage as we used above in `MathIs42`). Such builtins can be useful to extract commonly-used code into a separate code object that can be used by multiple callers, while the code is only produced once. Let's extract the code that handles heap numbers into a separate builtin called `MathIsHeapNumber42`, and call it from `MathIs42`.
+CSA builtins can also be created with stub linkage (instead of JS linkage as we used above in `MathIs42`). Such builtins can be useful to extract commonly-used code into a separate code object that can be used by multiple callers, while the code is only produced once. Let’s extract the code that handles heap numbers into a separate builtin called `MathIsHeapNumber42`, and call it from `MathIs42`.
 
-Defining and using TFS stubs is easy; declaration are again placed in [src/builtins/builtins-definitions.h](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-definitions.h?q=builtins-definitions.h+package:%5Echromium$&l=1):
+Defining and using TFS stubs is easy; declaration are again placed in [`src/builtins/builtins-definitions.h`](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-definitions.h?q=builtins-definitions.h+package:%5Echromium$&l=1):
 
 ```C++
 #define BUILTIN_LIST_BASE(CPP, API, TFJ, TFC, TFS, TFH, ASM, DBG)              \
@@ -167,7 +167,7 @@ Defining and using TFS stubs is easy; declaration are again placed in [src/built
 
 Note that currently, order within `BUILTIN_LIST_BASE` does matter. Since `MathIs42` calls `MathIsHeapNumber42`, the former needs to be listed after the latter (this requirement should be lifted at some point).
 
-The definition is also straightforward. In [src/builtins/builtins-math-gen.cc](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-math-gen.cc?q=builtins-math-gen.cc+package:%5Echromium$&l=1):
+The definition is also straightforward. In [`src/builtins/builtins-math-gen.cc`](https://cs.chromium.org/chromium/src/v8/src/builtins/builtins-math-gen.cc?q=builtins-math-gen.cc+package:%5Echromium$&l=1):
 
 ```C++
 // Defining a TFS builtin works exactly the same way as TFJ builtins.
@@ -180,7 +180,7 @@ TF_BUILTIN(MathIsHeapNumber42, MathBuiltinsAssembler) {
 }
 ```
 
-Finally, let's call our new builtin from `MathIs42`:
+Finally, let’s call our new builtin from `MathIs42`:
 
 ```C++
 TF_BUILTIN(MathIs42, MathBuiltinsAssembler) {
@@ -197,4 +197,4 @@ TF_BUILTIN(MathIs42, MathBuiltinsAssembler) {
 
 Why should you care about TFS builtins at all? Why not leave the code inline (or extracted into a helper method for better readability)?
 
-An important reason is code space - builtins are generated at compile-time and included in the V8 snapshot, thus unconditionally taking up (significant) space in every created isolate. Extracting large chunks of commonly used code to TFS builtins can quickly lead to space savings in the 10s to 100s of KB's.
+An important reason is code space: builtins are generated at compile-time and included in the V8 snapshot, thus unconditionally taking up (significant) space in every created isolate. Extracting large chunks of commonly used code to TFS builtins can quickly lead to space savings in the 10s to 100s of KBs.
