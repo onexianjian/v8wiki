@@ -14,7 +14,7 @@ The remaining document will focus on the latter and give a brief tutorial for de
 
 # CodeStubAssembler
 
-V8's CodeStubAssembler is a custom, platform agnostic assembler that provides low-level primitives as a thin abstraction over assembly, but also offers an extensive library of higher-level functionality.
+V8’s CodeStubAssembler is a custom, platform-agnostic assembler that provides low-level primitives as a thin abstraction over assembly, but also offers an extensive library of higher-level functionality.
 
 ```c++
 // Low-level:
@@ -33,7 +33,7 @@ CSA builtins run through part of the TurboFan compilation pipeline (including bl
 
 # Writing a CodeStubAssembler Builtin
 
-In this section, we will write a simple CSA builtin that takes a single argument, and returns whether it represents the number `42`. The builtin will be exposed to JS by installing it on the Math object (because we can).
+In this section, we will write a simple CSA builtin that takes a single argument, and returns whether it represents the number `42`. The builtin will be exposed to JS by installing it on the `Math` object (because we can).
 
 This example demonstrates:
 * Creating a CSA builtin with JavaScript linkage, which can be called like a JS function.
