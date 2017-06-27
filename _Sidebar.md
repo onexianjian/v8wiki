@@ -11,7 +11,7 @@
    * [Code of conduct](Code-of-conduct)
    * [Committer’s responsibility](Committer's-responsibility)
    * [Testing](Testing)
-   * [Evaluating Code Coverage](Evaluating Code Coverage)
+   * [Evaluating Code Coverage](Evaluating-Code-Coverage)
    * [Release process](Release-Process)
    * [Feature launch process](Feature-Launch-Process)
    * [Merging & patching](Merging-&-Patching)
