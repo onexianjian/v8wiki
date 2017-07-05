@@ -80,7 +80,7 @@ If you don't want to run all the JSTests, you can provide a filter argument:
 ```
   python -u tools/run_perf.py --arch x64 
       --binary-override-path ~/v8/out.gn/x64.release/d8 
-      --filter JSTests/TypedArrays/ 
+      --filter JSTests/TypedArrays 
       test/js-perf-test/JSTests.json
 ```
 
